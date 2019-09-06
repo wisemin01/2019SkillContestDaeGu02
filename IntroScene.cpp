@@ -6,6 +6,13 @@
 
 void IntroScene::Initialize()
 {
+	// ================================================================
+	// RESOURCE LOADING
+	// ================================================================
+
+	{
+		Sprite::Load("Black", "UI/Black.png");
+	}
 }
 
 void IntroScene::Update()

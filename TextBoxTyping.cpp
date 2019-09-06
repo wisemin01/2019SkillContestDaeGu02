@@ -49,8 +49,9 @@ void TextBoxTyping::Stay()
 	if (m_Frame.Update())
 	{
 		m_pFSM->Owner->m_sNowContext = m_sFinalContext.substr(0, m_Frame.CurrentFrame);
-
 		m_pFSM->Owner->m_pTextRenderer->SetContext(m_pFSM->Owner->m_sNowContext);
+
+		m_pFSM->Owner->m_pTypingSoundSource->DuplicatePlay();
 
 		if (m_Frame.IsLastFrame == true)
 		{

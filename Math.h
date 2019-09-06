@@ -198,5 +198,7 @@ ostream& operator << (ostream& os, const Vector4& value);
 ostream& operator << (ostream& os, const Quaternion& value);
 ostream& operator << (ostream& os, const Matrix& value);
 
-bool PointInRect(const RECT* rc, const Vector3* pt);
+bool			PointInRect(const RECT* rc, const Vector3* pt);
+std::string		SecondsToTimeStringA(float seconds);
+std::wstring	SecondsToTimeStringW(float seconds);
 

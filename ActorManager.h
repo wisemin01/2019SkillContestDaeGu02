@@ -21,6 +21,10 @@ public:
 	// 새 빈 엑터를 생성합니다.
 	Actor* CreateEmpty(Tag tag = -1, bool isVisible = true, bool isActive = true);
 
+	// 태그에 맞는 엑터를 가져옵니다.
+	// 가장 첫번째로 존재하는 객체를 가져옵니다.
+	Actor* FindActor(Tag tag);
+
 	void Update();
 	void Reset();
 };

@@ -11,7 +11,7 @@ void TextBox::Initialize()
 	AddComponent<Transform>();
 
 	m_pTextRenderer = AddComponent<TextRenderer>();
-	m_pTextRenderer->Set("메이플스토리 Bold", 50, m_sNowContext);
+	m_pTextRenderer->Set("메이플스토리 Bold", 18, m_sNowContext);
 
 	m_pFSM = AddComponent<FSM<TextBox>>();
 	m_pFSM->SetOwner(this);
@@ -20,6 +20,8 @@ void TextBox::Initialize()
 	m_pFSM->AddState(TypingType::Typing, new TextBoxTyping());
 	
 	m_pFSM->ChangeState(TypingType::None);
+
+	m_pTypingSoundSource = SoundSource::Load("beep-26", L"Sound/beep-26.wav");
 }
 
 void TextBox::Update()

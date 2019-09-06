@@ -38,6 +38,15 @@ Actor* ActorManager::CreateEmpty(Tag tag, bool isVisible, bool isActive)
 	return A;
 }
 
+Actor* ActorManager::FindActor(Tag tag)
+{
+	for (auto iter : m_listActors)
+	{
+		if (iter->m_Tag == tag)
+			return iter;
+	}
+}
+
 void ActorManager::Update()
 {
 	for (auto iter : m_listActors)

@@ -21,5 +21,7 @@ public:
 
 	void Set(const string& fontKey, int fontSize, const OutputString& context, Color color = Color::White);
 	void SetContext(const OutputString& context);
+
+	void SetColor(const Color& color) { m_Color = color; }
 };
 

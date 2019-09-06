@@ -4,9 +4,15 @@
 #include "Camera.h"
 #include "Soldier.h"
 #include "SelectRange.h"
+#include "FSM.h"
+
+#include "PlayerControllerTutorial.h"
+#include "PlayerControllerStage1.h"
 
 void PlayerController::Initialize()
 {
+	SoundSource::Load("midnight-ride-01a", L"Sound/midnight-ride-01a.wav");
+
 	AddComponent<Rigidbody>();
 	m_pSelector = AddComponent<SelectRange>();
 	m_pCamera	= AddComponent<Camera>();
@@ -21,6 +27,26 @@ void PlayerController::Initialize()
 	OnSelectListen = CreateListener(RECT, OnSelectCommand);
 
 	m_pSelector->OnSelect += OnSelectListen;
+
+	m_pFSM = AddComponent<FSM<PlayerController>>();
+	m_pFSM->SetOwner(this);
+
+	// Did the player finish the tutorial
+	static bool bIsFihishTutorial = false;
+
+	if (bIsFihishTutorial == true)
+	{
+		m_pFSM->AddState(PlayerControllerType::Stage1, new PlayerControllerStage1());
+
+		m_pFSM->ChangeState(PlayerControllerType::Stage1);
+	}
+	else
+	{
+		m_pFSM->AddState(PlayerControllerType::Tutorial, new PlayerControllerTutorial());
+
+		m_pFSM->ChangeState(PlayerControllerType::Tutorial);
+		bIsFihishTutorial = true;
+	}
 }
 
 void PlayerController::Update()
@@ -135,4 +161,9 @@ void PlayerController::CameraPositionLimit()
 void PlayerController::OnSelectCommand(RECT rc)
 {
 	OnSelect(rc);
+}
+
+void PlayerController::Say(const OutputString& context)
+{
+	OnTalk(context);
 }

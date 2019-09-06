@@ -5,21 +5,31 @@ class Camera;
 class Soldier;
 class SelectRange;
 
+template <typename T>
+class FSM;
+
 class PlayerController :
 	public Component
 {
+	friend class PlayerControllerTutorial;
+	friend class PlayerControllerStage1;
 private:
 	float m_fCameraMoveSpeed	= 3.2f;
 
 	RECT	m_rcCameraRange		= { 0 };
 	Camera* m_pCamera			= nullptr;
 	SelectRange* m_pSelector	= nullptr;
+	Timer*	m_pTimeAttackTimer	= nullptr;
+
+	FSM<PlayerController>* m_pFSM = nullptr;
+
 public:
 
 	EventHandler<Vector3>		OnRightClick;
 	EventHandler<RECT>			OnSelect;
 	EventHandler<EmptyEventArg>	OnDeselect;
 	EventHandler<EmptyEventArg>	OnStop;
+	EventHandler<OutputString>	OnTalk;
 
 public:
 
@@ -47,6 +57,10 @@ private:
 	void CameraPositionLimit();
 
 	void OnSelectCommand(RECT rc);
+
+public:
+
+	void Say(const OutputString& context);
 
 public:
 

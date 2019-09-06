@@ -8,6 +8,8 @@
 void OperatorTalk::Enter()
 {
 	m_pFSM->Base->renderer->Change(UnitStateType::Talk);
+
+	SoundSource::Load("button-34", L"Sound/button-34.wav")->Play();
 }
 
 void OperatorTalk::Stay()

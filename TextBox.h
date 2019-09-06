@@ -19,6 +19,8 @@ private:
 
 	FSM<TextBox>* m_pFSM = nullptr;
 	TextRenderer* m_pTextRenderer = nullptr;
+
+	SoundSource* m_pTypingSoundSource = nullptr;
 public:
 	virtual void Initialize() override;
 	virtual void Update() override;
@@ -27,6 +29,9 @@ public:
 	void Insert(const OutputString& context);
 	void SetTypingSpeed(float delay);
 	void SetTypingEndWaitTime(float delay);
+
+	bool IsEmpty() { return m_queueContexts.empty(); }
+	int GetQueueSize() { return m_queueContexts.size(); }
 
 	int GetCurrentState();
 };

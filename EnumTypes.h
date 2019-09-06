@@ -11,6 +11,7 @@ public:
 		Player,
 		Controller,
 		UI,
+		Operator,
 		Camera
 	};
 };
@@ -61,6 +62,20 @@ public:
 		Typing = 1
 	};
 };
+
+static class PlayerControllerType
+{
+public:
+	enum : int
+	{
+		Default = 0,
+		Tutorial = 1,
+		Stage1 = 2,
+		Stage2 = 3,
+		Stage3 = 4
+	};
+};
+
 
 static class Window
 {

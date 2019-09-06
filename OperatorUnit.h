@@ -15,6 +15,8 @@ private:
 	
 	FSM< OperatorUnit >	*	m_pFSM		= nullptr;
 	TextBox	*				m_pTextBox	= nullptr;
+
+	EventListener<OutputString>* OnTalkListen;
 public:
 
 	virtual void Initialize() override;
@@ -22,5 +24,12 @@ public:
 	virtual void Release() override;
 
 	void ConnectToTextBox(TextBox* textBox);
+
+	void Say(const OutputString& context);
+
+	TextBox* GetConnectionTextBox() { return m_pTextBox; }
+	int GetFSMState();
+
+	bool HasWork();
 };
 

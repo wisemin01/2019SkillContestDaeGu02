@@ -38,8 +38,6 @@ void Soldier::Initialize()
 	MainPlayerController->OnSelect		+= OnSelect;
 	MainPlayerController->OnDeselect	+= OnDeselect;
 	MainPlayerController->OnStop		+= OnStop;
-
-	m_pFSM->DebugView();
 }
 
 void Soldier::Update()

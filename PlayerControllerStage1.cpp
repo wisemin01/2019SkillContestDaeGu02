@@ -1,0 +1,72 @@
+#include "DXUT.h"
+#include "PlayerControllerStage1.h"
+
+#include "FSM.h"
+#include "PlayerController.h"
+#include "TextBox.h"
+#include "OperatorUnit.h"
+#include "TextRenderer.h"
+
+void PlayerControllerStage1::Enter()
+{
+	m_bIsStart = false;
+
+	CreateStage1UI();
+}
+
+void PlayerControllerStage1::Stay()
+{
+	if (m_bIsStart == false)
+	{
+		Start();
+
+		m_bIsStart = true;
+	}
+}
+
+void PlayerControllerStage1::Exit()
+{
+}
+
+void PlayerControllerStage1::Start()
+{
+	m_pFSM->Owner->m_pTimeAttackTimer = Timer::Create(180.0f);
+
+	SoundSource::Find("midnight-ride-01a")->Play(true);
+
+	m_pFSM->Owner->Say(L"안녕하세요 사령관님!");
+	m_pFSM->Owner->Say(L"이번엔 아군 함선들을 지휘해서\n함선들이 해운대에 상륙할 수\n있도록 도와주시면 됩니다.");
+	m_pFSM->Owner->Say(L"이번 임무도 잘 수행해주세요.");
+
+	m_pMissionPanelText->SetContext(L"모든 함선들을\n해운대로 정착시키자.");
+}
+
+void PlayerControllerStage1::CreateStage1UI()
+{
+	Actor* pTimePanelBase = ACTOR.Create(TagType::UI);
+
+	pTimePanelBase->AddComponent<TextRenderer>()->Set("메이플스토리 Bold", 30, L"");
+	pTimePanelBase->transform->Position = Vector3(288, 532, 0);
+
+	m_pTimePanelText = pTimePanelBase->GetComponent<TextRenderer>();
+
+	Actor* pMissionPanelBase = ACTOR.Create(TagType::UI);
+
+	pMissionPanelBase->AddComponent<TextRenderer>()->Set("메이플스토리 Bold", 20, L"");
+	pMissionPanelBase->transform->Position = Vector3(60, 192, 0);
+
+	m_pMissionPanelText = pMissionPanelBase->GetComponent<TextRenderer>();
+}
+
+void PlayerControllerStage1::InputHelp()
+{
+	if (Input::GetKeyDown(KeyCode::Space))
+	{
+		m_pFSM->Owner->Say(L"도움이 필요하신가요?\n혹시 설명이 더 필요하다면 <H> 키를 눌러주세요.");
+	}
+
+	if (Input::GetKeyDown(KeyCode::H))
+	{
+		m_pFSM->Owner->Say(L"[!] 조작법\n* 마우스 좌클릭 - 범위 선택\n* 마우스 우클릭 - 선택된 객체 이동, 공격\n* 마우스 이동 - 카메라 이동");
+	}
+}

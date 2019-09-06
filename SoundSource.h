@@ -13,8 +13,8 @@ public:
 
 	virtual void Load(const std::wstring& path);
 
-	void Play(bool isLoop = false);
-	void DuplicatePlay(bool isLoop = false);
+	void Play(bool isLoop = false, int volume = 100);
+	void DuplicatePlay(bool isLoop = false, int volume = 100);
 
 public:
 

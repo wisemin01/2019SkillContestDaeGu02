@@ -19,7 +19,10 @@ public:
 
 	bool GetIsEnd() { return m_bIsEnd; }
 
-	PropertyG(GetIsEnd) bool IsEnd;
+	float GetAnyTime() { return m_fAnyTimes; }
+
+	PropertyG(GetIsEnd)		bool IsEnd;
+	PropertyG(GetAnyTime)	float AnyTime;
 
 public:
 

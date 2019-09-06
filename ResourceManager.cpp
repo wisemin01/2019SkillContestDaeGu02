@@ -86,7 +86,7 @@ Font* ResourceManager::InsertFont(const std::string& fontKey, int fontSize)
 
 		Font* font = new Font();
 
-		D3DXCreateFontA(g_pDevice, 0, 0, fontSize, 0,
+		D3DXCreateFontA(g_pDevice, fontSize, 0, FW_HEAVY, 0,
 			false, HANGUL_CHARSET, 0, 0, 0, fontKey.c_str(), &font->m_pFont);
 
 		m_mapFonts.insert(std::make_pair(key, font));

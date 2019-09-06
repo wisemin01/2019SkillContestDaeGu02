@@ -132,9 +132,9 @@ void Stage1::Initialize()
 		Actor* pTextBox = ACTOR.CreateEmpty(TagType::UI);
 		auto pTextBoxComponent = pTextBox->AddComponent<TextBox>();
 		pTextBox->transform->SetParent(pTextBoxPanel->transform);
-		pTextBox->transform->Position = Vector3(-106, -26.5, 0);
+		pTextBox->transform->Position = Vector3(-120, -36.5, 0);
 		
-		Actor* pOperator = ACTOR.Create(TagType::UI);
+		Actor* pOperator = ACTOR.Create(TagType::Operator);
 		pOperator->AddComponent<OperatorUnit>();
 		pOperator->GetComponent<OperatorUnit>()->ConnectToTextBox(pTextBoxComponent);
 		pOperator->transform->Position = Vector3(70, 394, 0);

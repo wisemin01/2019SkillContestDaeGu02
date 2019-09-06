@@ -384,6 +384,22 @@ bool PointInRect(const RECT* rc, const Vector3* pt)
 		);
 }
 
+std::string SecondsToTimeStringA(float seconds)
+{
+	int m = (int)seconds / 60;
+	int s = (int)seconds % 60;
+
+	return to_string(m) + ":" + to_string(s);
+}
+
+std::wstring SecondsToTimeStringW(float seconds)
+{
+	int m = (int)seconds / 60;
+	int s = (int)seconds % 60;
+
+	return to_wstring(m) + L":" + to_wstring(s);
+}
+
 ostream& operator << (ostream& os, const Vector4& value)
 {
 	os << value.x << ", " << value.y << ", " << value.z << ", " << value.w;

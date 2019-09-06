@@ -186,6 +186,21 @@
     <Filter Include="02. INGAME\02. Components\01. Object to use directly\TextBox\States\02. Typing">
       <UniqueIdentifier>{bd83f717-2e91-4556-97eb-d73bd40a2282}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States">
+      <UniqueIdentifier>{e2580546-1764-46d4-94cf-c6bc5fac477d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\01. Tutorial">
+      <UniqueIdentifier>{a23c48a8-6706-4a6e-ab86-fce03879f908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\02. Stage1">
+      <UniqueIdentifier>{93cb1094-31a4-4e20-80fe-1ba9dff53a22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\03. Stage2">
+      <UniqueIdentifier>{7f12b489-be64-4320-85ca-eb47a6f29c58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\Fade">
+      <UniqueIdentifier>{627c4cb4-943c-4d50-ab5e-f3c38290e4ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="DXUT\Optional\directx.ico">
@@ -386,6 +401,15 @@
     <ClCompile Include="TextBoxTyping.cpp">
       <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox\States\02. Typing</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerControllerTutorial.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\01. Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerControllerStage1.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\02. Stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="Fade.cpp">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\Fade</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -555,6 +579,15 @@
     </ClInclude>
     <ClInclude Include="TypeDefines.h">
       <Filter>02. INGAME\03. Types</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerControllerTutorial.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\01. Tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerControllerStage1.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\02. Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="Fade.h">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\Fade</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
