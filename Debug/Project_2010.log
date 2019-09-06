@@ -1,0 +1,7 @@
+﻿  Math.cpp
+  PlayerControllerTutorial.cpp
+  Project.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Project.cpp(157,1): warning C4996:  'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  코드를 생성하고 있습니다...
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(243): message :  'freopen' 선언을 참조하십시오.
+  Project_2010.vcxproj -> C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Debug\Project.exe

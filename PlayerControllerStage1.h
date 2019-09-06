@@ -9,6 +9,8 @@ class PlayerControllerStage1 :
 {
 private:
 	bool m_bIsStart = false;
+	bool m_bIsWarningTimeAttack = false;
+	bool m_bIsWarningTimeEnd = false;
 
 	TextRenderer* m_pTimePanelText = nullptr;
 	TextRenderer* m_pMissionPanelText = nullptr;
@@ -25,5 +27,6 @@ private:
 	void Start();
 	void CreateStage1UI();
 	void InputHelp();
+	void TimeUpdate();
 };
 

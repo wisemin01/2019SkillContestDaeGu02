@@ -17,6 +17,8 @@ private:
 	bool m_bIsWarningTimeAttack = false;
 	bool m_bIsWarningTimeEnd	= false;
 
+	bool m_bIsDisplayQuest[2]	= { false };
+
 	TextRenderer* m_pTimePanelText = nullptr;
 	TextRenderer* m_pMissionPanelText = nullptr;
 
@@ -44,6 +46,7 @@ private:
 	void OnMoveCommand(Vector3 v);
 
 	void CheckEndTutorial();
+	void CheckDisplayQuest();
 	void TimeUpdate();
 };
 

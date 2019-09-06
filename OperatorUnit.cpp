@@ -40,8 +40,8 @@ void OperatorUnit::ConnectToTextBox(TextBox* textBox)
 {
 	m_pTextBox = textBox;
 
-	m_pTextBox->SetTypingSpeed(0.075f);
-	m_pTextBox->SetTypingEndWaitTime(0.5f);
+	m_pTextBox->SetTypingSpeed(0.025f);
+	m_pTextBox->SetTypingEndWaitTime(0.8f);
 }
 
 void OperatorUnit::Say(const OutputString& context)

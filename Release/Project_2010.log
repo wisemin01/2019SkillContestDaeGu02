@@ -1,0 +1,173 @@
+﻿  DXUT.cpp
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(12,1): warning C4005:  'DXGI_STATUS_OCCLUDED': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55460): message :  'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(13,1): warning C4005:  'DXGI_STATUS_CLIPPED': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55469): message :  'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(14,1): warning C4005:  'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55478): message :  'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(15,1): warning C4005:  'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55487): message :  'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(16,1): warning C4005:  'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55496): message :  'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(17,1): warning C4005:  'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55505): message :  'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(18,1): warning C4005:  'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55514): message :  'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(21,1): warning C4005:  'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55529): message :  'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(22,1): warning C4005:  'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55538): message :  'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(23,1): warning C4005:  'DXGI_ERROR_MORE_DATA': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55547): message :  'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(24,1): warning C4005:  'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55556): message :  'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(25,1): warning C4005:  'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55565): message :  'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(26,1): warning C4005:  'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55574): message :  'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(27,1): warning C4005:  'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55584): message :  'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(28,1): warning C4005:  'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55593): message :  'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(29,1): warning C4005:  'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55603): message :  'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(30,1): warning C4005:  'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55612): message :  'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(31,1): warning C4005:  'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55622): message :  'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(32,1): warning C4005:  'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55631): message :  'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(33,1): warning C4005:  'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55640): message :  'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(34,1): warning C4005:  'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55650): message :  'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dxgitype.h(35,1): warning C4005:  'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55659): message :  'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3d10.h(608,1): warning C4005:  'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55899): message :  'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3d10.h(609,1): warning C4005:  'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(55908): message :  'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Time.h(11,34): warning C4244:  'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\EnumTypes.h(17,2): warning C4091:  'static ': 변수를 선언하지 않으면 'TagType' 왼쪽은 무시됩니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\EnumTypes.h(32,2): warning C4091:  'static ': 변수를 선언하지 않으면 'UnitStateType' 왼쪽은 무시됩니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\EnumTypes.h(43,2): warning C4091:  'static ': 변수를 선언하지 않으면 'SoldierType' 왼쪽은 무시됩니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\EnumTypes.h(54,2): warning C4091:  'static ': 변수를 선언하지 않으면 'WobbleType' 왼쪽은 무시됩니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\EnumTypes.h(64,2): warning C4091:  'static ': 변수를 선언하지 않으면 'TypingType' 왼쪽은 무시됩니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\EnumTypes.h(77,2): warning C4091:  'static ': 변수를 선언하지 않으면 'PlayerControllerType' 왼쪽은 무시됩니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\EnumTypes.h(91,2): warning C4091:  'static ': 변수를 선언하지 않으면 'Window' 왼쪽은 무시됩니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\InputManager.h(50,2): warning C4091:  'static ': 변수를 선언하지 않으면 'Input' 왼쪽은 무시됩니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Renderer.h(14,2): warning C4091:  'static ': 변수를 선언하지 않으면 'RenderType' 왼쪽은 무시됩니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Core\DXUT.cpp(696,131): warning C4838:  'UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Core\DXUT.cpp(696,187): warning C4838:  'UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Core\DXUT.cpp(697,135): warning C4838:  'UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Core\DXUT.cpp(697,195): warning C4838:  'UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Core\DXUT.cpp(4961,1): warning C4996:  'GetVersionExW': deprecated로 선언되었습니다.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\sysinfoapi.h(387): message :  'GetVersionExW' 선언을 참조하십시오.
+  Actor.cpp
+  ActorManager.cpp
+  Animation.cpp
+  BaseState.cpp
+  Camera.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Camera.cpp(17): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Camera.cpp(17,58): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Camera.cpp(32,73): warning C4244:  '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Camera.cpp(32,66): warning C4244:  '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Camera.cpp(32): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+  Collider.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Camera.cpp(32,65): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Collider.cpp(24,66): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Collider.cpp(24,53): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Collider.cpp(24,38): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CollisionManager.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Collider.cpp(24,24): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\CollisionManager.cpp(43): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\CollisionManager.cpp(43,30): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+  Component.cpp
+  SDKsound.cpp
+  SDKwavefile.cpp
+  EventHandler.cpp
+  Fade.cpp
+  Font.cpp
+  Frame.cpp
+  InputManager.cpp
+  IntroScene.cpp
+  LineRenderer.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\CollisionManager.cpp(43,42): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\LineRenderer.cpp(25): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+  Math.cpp
+  MultiSprite.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\LineRenderer.cpp(25,58): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\MultiSprite.cpp(24,1): warning C4996:  'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  OperatorIdle.cpp
+  컴파일하고 있습니다...
+  OperatorTalk.cpp
+  OperatorUnit.cpp
+  PlayerController.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(1774): message :  'sprintf' 선언을 참조하십시오.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\PlayerController.cpp(76,41): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  PlayerControllerStage1.cpp
+  PlayerControllerTutorial.cpp
+  Renderer.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\PlayerController.cpp(76,34): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Renderer.cpp(42): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+  RenderManager.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Renderer.cpp(42,58): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+  ResourceManager.cpp
+  Rigidbody.cpp
+  Scene.cpp
+  SceneManager.cpp
+  SelectRange.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\RenderManager.cpp(140,20): warning C4244:  '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\SelectRange.cpp(36,4): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\SelectRange.cpp(35,4): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\SelectRange.cpp(34,4): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Singleton.cpp
+  Soldier.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\SelectRange.cpp(33,4): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Soldier.cpp(76): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+  SoldierIdle.cpp
+  SoldierMove.cpp
+  SoundSource.cpp
+  Sprite.cpp
+  Stage1.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Soldier.cpp(76,43): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Stage1.cpp(60,75): warning C4244:  '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TextBox.cpp
+  컴파일하고 있습니다...
+  TextBoxNone.cpp
+  TextBoxTyping.cpp
+  TextRenderer.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Stage1.cpp(60,66): warning C4244:  '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\TextRenderer.cpp(24): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+  Timer.cpp
+  Transform.cpp
+  Wobble.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\TextRenderer.cpp(24,57): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
+  DXUTenum.cpp
+  DXUTmisc.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Wobble.cpp(42,18): warning C4244:  '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Core\DXUTmisc.cpp(1263,1): warning C4996:  'GetVersionExA': deprecated로 선언되었습니다.
+  DXUTcamera.cpp
+  DXUTgui.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\sysinfoapi.h(378): message :  'GetVersionExA' 선언을 참조하십시오.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Optional\DXUTgui.cpp(6846,37): warning C4458:  'iTexture' 선언은 클래스 멤버를 숨깁니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Optional\DXUTgui.h(109,10): message :  'CDXUTElement::iTexture' 선언을 참조하십시오.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Optional\DXUTgui.cpp(6860,34): warning C4458:  'iFont' 선언은 클래스 멤버를 숨깁니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Optional\DXUTgui.h(110,10): message :  'CDXUTElement::iFont' 선언을 참조하십시오.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Optional\DXUTgui.cpp(6860,74): warning C4458:  'dwTextFormat' 선언은 클래스 멤버를 숨깁니다.
+  DXUTres.cpp
+  DXUTsettingsdlg.cpp
+  SDKmesh.cpp
+  SDKmisc.cpp
+  MainGame.cpp
+  Project.cpp
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\DXUT\Optional\DXUTgui.h(111,11): message :  'CDXUTElement::dwTextFormat' 선언을 참조하십시오.
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\ActorManager.cpp(48): warning C4715: 'ActorManager::FindActor': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\PlayerControllerTutorial.cpp(14): warning C4701: 초기화되지 않았을 수 있는 'pBase' 지역 변수를 사용했습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\PlayerControllerTutorial.cpp(14): warning C4703: 초기화되지 않았을 수 있는 로컬 포인터 변수 'pBase'이(가) 사용되었습니다.
+C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\PlayerController.cpp(91): warning C4715: 'PlayerController::SpawnSoldier': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  All 4139 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  Project_2010.vcxproj -> C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Release\Project.exe

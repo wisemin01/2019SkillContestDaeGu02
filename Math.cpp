@@ -389,7 +389,7 @@ std::string SecondsToTimeStringA(float seconds)
 	int m = (int)seconds / 60;
 	int s = (int)seconds % 60;
 
-	return to_string(m) + ":" + to_string(s);
+	return to_string(m) + (s < 10 ? ":0" : ":") + to_string(s);
 }
 
 std::wstring SecondsToTimeStringW(float seconds)
@@ -397,7 +397,7 @@ std::wstring SecondsToTimeStringW(float seconds)
 	int m = (int)seconds / 60;
 	int s = (int)seconds % 60;
 
-	return to_wstring(m) + L":" + to_wstring(s);
+	return to_wstring(m) + (s < 10 ? L":0" : L":") + to_wstring(s);
 }
 
 ostream& operator << (ostream& os, const Vector4& value)

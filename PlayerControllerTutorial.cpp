@@ -19,8 +19,14 @@ OperatorUnit* PlayerControllerTutorial::GetOperator()
 
 void PlayerControllerTutorial::Enter()
 {
-	m_bIsStartTutorial = false;
-	m_bIsQuest_Select = false;	
+	m_bIsStartTutorial		= false;
+	m_bIsQuest_Select		= false;
+	m_bIsQuest_Move			= true;
+	m_bIsEndListenTutorial	= false;
+	m_bIsWarningTimeAttack	= false;
+	m_bIsWarningTimeEnd		= false;
+	m_bIsDisplayQuest[0]	= false;
+	m_bIsDisplayQuest[1]	= false;
 
 	OnSelect = CreateListener(RECT, OnSelectCommand);
 	m_pFSM->Owner->OnSelect += OnSelect;
@@ -39,25 +45,7 @@ void PlayerControllerTutorial::Stay()
 		return;
 	}
 
-	if (m_bIsQuest_Select == false)
-	{
-		auto pOperator = GetOperator();
-
-		if (pOperator->HasWork() == false)
-		{
-			m_pMissionPanelText->SetContext(L"마우스 좌클릭(드래그)을 이용해서\n유닛을 선택하자.");
-		}
-	}
-	else if (m_bIsQuest_Move == false)
-	{
-		auto pOperator = GetOperator();
-
-		if (pOperator->HasWork() == false)
-		{
-			m_pMissionPanelText->SetContext(L"마우스 우클릭을 이용해서\n유닛을 이동시키자.");
-		}
-	}
-	
+	CheckDisplayQuest();
 	CheckEndTutorial();
 	TimeUpdate();
 }
@@ -69,21 +57,6 @@ void PlayerControllerTutorial::Exit()
 
 	OnSelect = nullptr;
 	OnMove = nullptr;
-}
-
-void PlayerControllerTutorial::Start()
-{
-	m_pFSM->Owner->m_pTimeAttackTimer = Timer::Create(180.0f);
-
-	SoundSource::Find("midnight-ride-01a")->Play(true);
-
-	m_pFSM->Owner->Say(L"안녕하세요 사령관님!");
-	m_pFSM->Owner->Say(L"저는 오퍼레이터를 맡은\n○○이라고 합니다.");
-	m_pFSM->Owner->Say(L"지금부터 사령관님께\n조작법을 알려드리려고 합니다.");
-	m_pFSM->Owner->Say(L"잘 따라와주세요.");
-	m_pFSM->Owner->Say(L"일단 마우스 좌클릭으로\n범위를 지정해 유닛을\n선택해보세요.");
-
-	m_bIsStartTutorial = true;
 }
 
 void PlayerControllerTutorial::CreateTutorialUI()
@@ -103,18 +76,41 @@ void PlayerControllerTutorial::CreateTutorialUI()
 	m_pMissionPanelText = pMissionPanelBase->GetComponent<TextRenderer>();
 }
 
+void PlayerControllerTutorial::Start()
+{
+	m_pFSM->Owner->m_pTimeAttackTimer = Timer::Create(180.0f);
+
+	SoundSource::Find("midnight-ride-01a")->Play(true);
+
+	m_pFSM->Owner->Say(L"안녕하세요 사령관님!");
+	m_pFSM->Owner->Say(L"저는 오퍼레이터를 맡은\n○○이라고 합니다.");
+	m_pFSM->Owner->Say(L"지금부터 사령관님께\n조작법을 알려드리려고 합니다.");
+	m_pFSM->Owner->Say(L"잘 따라와주세요.");
+	m_pFSM->Owner->Say(L"일단 마우스 좌클릭으로\n범위를 지정해 유닛을\n선택해보세요.");
+
+	m_bIsDisplayQuest[0] = true;
+
+	m_bIsStartTutorial = true;
+}
+
 void PlayerControllerTutorial::Say_Tutorial_Text01()
 {
 	m_pMissionPanelText->SetContext(L"");
 
+	SoundSource::Load("mission-success", L"Sound/mission-success.wav")->Play();
+
 	m_pFSM->Owner->Say(L"잘 하셨어요!");
 	m_pFSM->Owner->Say(L"선택된 함선들은\n마우스 우클릭으로 이동시킬 수 있어요.");
 	m_pFSM->Owner->Say(L"마우스 우클릭으로\n함선들을 이동시켜보세요.");
+
+	m_bIsDisplayQuest[1] = true;
 }
 
 void PlayerControllerTutorial::Say_Tutorial_Text02()
 {
 	m_pMissionPanelText->SetContext(L"");
+
+	SoundSource::Load("mission-success", L"Sound/mission-success.wav")->Play();
 
 	m_pFSM->Owner->Say(L"잘 하셨어요!");
 	m_pFSM->Owner->Say(L"설명은 여기까지에요.");
@@ -167,12 +163,46 @@ void PlayerControllerTutorial::CheckEndTutorial()
 	}
 }
 
+void PlayerControllerTutorial::CheckDisplayQuest()
+{
+	if (m_bIsDisplayQuest[0] == true)
+	{
+		auto pOperator = GetOperator();
+
+		if (pOperator->HasWork() == false)
+		{
+			SoundSource::Load("button-3", L"Sound/button-3.wav")->Play();
+
+			m_pMissionPanelText->SetContext(L"마우스 좌클릭(드래그)을 이용해서\n유닛을 선택하자.");
+
+			m_bIsDisplayQuest[0] = false;
+		}
+	}
+
+	if (m_bIsDisplayQuest[1] == true)
+	{
+		auto pOperator = GetOperator();
+
+		if (pOperator->HasWork() == false)
+		{
+			SoundSource::Load("button-3", L"Sound/button-3.wav")->Play();
+
+			m_pMissionPanelText->SetContext(L"마우스 우클릭을 이용해서\n유닛을 이동시키자.");
+
+			m_bIsDisplayQuest[1] = false;
+		}
+	}
+
+}
+
 void PlayerControllerTutorial::TimeUpdate()
 {
 	float anyTime = m_pFSM->Owner->m_pTimeAttackTimer->AnyTime;
 
 	if (m_bIsWarningTimeAttack == false && anyTime <= 60.0f)
 	{
+		SoundSource::Load("beep-warning", L"Sound/beep-warning.wav")->Play();
+
 		m_bIsWarningTimeAttack = true;
 		m_pFSM->Owner->Say(L"시간이 얼마 남지 않았어요!\n서둘러주세요.");
 		m_pTimePanelText->SetColor(Color::Red);
