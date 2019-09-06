@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns:atg="http://atg.xbox.com" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="01. ENGINE">
+      <UniqueIdentifier>{bda735e3-a02b-47fc-8e44-26f2b2610979}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\01. MainGame">
+      <UniqueIdentifier>{8fe6196e-2bdf-4985-8ef2-18b44dcedf6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\02. Managers">
+      <UniqueIdentifier>{9a4556bf-d56c-45f4-8636-2d94b0f1a0f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\02. Managers\01. Resource Manager">
+      <UniqueIdentifier>{219bc28e-2ab7-4890-825b-38076cc97e05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\02. Managers\Singleton">
+      <UniqueIdentifier>{b21b12ea-8edd-4fef-a635-bc08684f619a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\02. Managers\02. Render Manager">
+      <UniqueIdentifier>{270f8425-b355-4331-bc5f-ea9e4b001497}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components">
+      <UniqueIdentifier>{3f84abd7-c2d3-49f9-9878-4e065d0682ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\01. Transform">
+      <UniqueIdentifier>{ce7f2a1a-3f78-407e-8516-56624063965b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\02. Renderer">
+      <UniqueIdentifier>{045325b7-18a9-4db5-afc0-469153df500d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME">
+      <UniqueIdentifier>{d7f1698b-9892-4520-8c3b-9b38596bb4cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\01. Scenes">
+      <UniqueIdentifier>{577d2e98-cdfc-4fce-942f-a6bd9ef0d8db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\01. Scenes\01. Intro Scene">
+      <UniqueIdentifier>{7676db54-94ae-4d40-a4ba-0bbf2ba9bfd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components">
+      <UniqueIdentifier>{1402ca75-35a0-4102-a615-99379b00b0ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\03. Types">
+      <UniqueIdentifier>{e345b319-b8ec-4bb6-9410-e09720c85756}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\03. BaseLayer Objects">
+      <UniqueIdentifier>{3bd04e82-71ba-4c19-b434-6a92ea573018}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\03. BaseLayer Objects\01. Sprite">
+      <UniqueIdentifier>{709b2e0f-7b4b-437e-bfd6-35ce4c9eb6bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\03. BaseLayer Objects\03. Actor">
+      <UniqueIdentifier>{c11bb080-4f49-41fd-9da7-a252a461e091}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\03. BaseLayer Objects\04. Scene">
+      <UniqueIdentifier>{80b4562f-5fc2-478e-a59f-d4f87e3642ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\03. BaseLayer Objects\05. Animation">
+      <UniqueIdentifier>{22eb3224-ab0b-453a-ba2b-8cc16ccd892f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\03. BaseLayer Objects\06. Frame">
+      <UniqueIdentifier>{abdac6aa-e99e-4430-b000-ffcdda204e5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\03. BaseLayer Objects\02. Timer &amp; Time">
+      <UniqueIdentifier>{78e2967a-c67d-4dd2-bb6c-d0f5966511f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\03. Collider">
+      <UniqueIdentifier>{ec2591f6-82ec-4874-88a5-f33cc9233a88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\04. Rigidbody">
+      <UniqueIdentifier>{261bce1f-4c5b-44cd-8394-7f2e192ef0c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\05. Core Define &amp; Includes">
+      <UniqueIdentifier>{12b5dba9-e234-41b7-9e14-e0a79537678b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\06. Other">
+      <UniqueIdentifier>{52b1a78a-9cc6-45bb-91b9-da93c073565b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\06. Other\Resource Files">
+      <UniqueIdentifier>{8e114980-c1a3-4ada-ad7c-83caadf5daeb}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="01. ENGINE\06. Other\Shaders">
+      <UniqueIdentifier>{2c3d4c8c-5d1a-459a-a05a-a4e4b608a44e}</UniqueIdentifier>
+      <Extensions>fx;fxh;hlsl</Extensions>
+    </Filter>
+    <Filter Include="01. ENGINE\06. Other\DXUT">
+      <UniqueIdentifier>{a43c5c25-0e86-4a20-b64a-883785ff74fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\06. Other\Math">
+      <UniqueIdentifier>{609b7aed-7b64-48ab-83f4-511e6ce0fe34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\06. Other\KeyCode">
+      <UniqueIdentifier>{0dc72892-3912-463b-b1f3-e218be49f17a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\05. Camera">
+      <UniqueIdentifier>{16c8844d-63c9-4d30-96dc-54d3e89e7040}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\Component">
+      <UniqueIdentifier>{73127771-8709-43c5-bae6-fdc892a96b8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\02. Managers\03. Actor Manager">
+      <UniqueIdentifier>{9a6fa60e-a16b-4be0-9cf5-e67c45c976c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\02. Managers\04. Scene Manager">
+      <UniqueIdentifier>{4d627e49-6bc0-4b18-b4a8-903513f9f72e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\02. Managers\05. Input Manager">
+      <UniqueIdentifier>{2ce2c6a9-a8b4-4713-a567-53c4f543337f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\02. Managers\06. Collision Manager">
+      <UniqueIdentifier>{9575db29-3620-4eb7-82ca-968d96755eba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\03. BaseLayer Objects\07. SoundSource">
+      <UniqueIdentifier>{2301b9c0-c602-428d-ad82-5b2bb6285c4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly">
+      <UniqueIdentifier>{f9f24563-c915-4608-a3c9-a14a64c54ee3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\Soldier">
+      <UniqueIdentifier>{b1ed7da0-dd22-4538-be19-26984ff49f57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\PlayerContoller">
+      <UniqueIdentifier>{d78efba0-c2ee-4b21-8c98-1ed6603c8d28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly">
+      <UniqueIdentifier>{d112ffda-f85e-4571-8c80-4663ddab5c34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\Wobble">
+      <UniqueIdentifier>{52629f1c-e1de-491b-bd6a-b6b3a82ba9ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\01. Scenes\02. Stage1">
+      <UniqueIdentifier>{2fe7c70b-846a-4468-8ef4-849f0e0fb7bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29">
+      <UniqueIdentifier>{27f8bb88-3949-4b2b-87c7-6d65a6a447f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29\BaseState">
+      <UniqueIdentifier>{3dd6c1a4-55e5-4fcb-a244-eb27bbe248cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\OperatorUnit">
+      <UniqueIdentifier>{4d0bee7f-0472-43e8-8d92-cb18d6d134c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States">
+      <UniqueIdentifier>{797240cf-2556-4339-92ee-983836d5b7de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\Soldier\States">
+      <UniqueIdentifier>{cbbbdb95-ad71-4984-939f-f79f033b9a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\Soldier\States\01. Idle">
+      <UniqueIdentifier>{96a8e6ce-4a33-47af-83d3-c20e4e55e4a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\Soldier\States\02. Move">
+      <UniqueIdentifier>{550e3300-19d6-44d8-a81a-4d577ec6a1cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\01. Idle">
+      <UniqueIdentifier>{e92c876c-6f4e-4370-bcbb-812be6c7ab5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\02. Talk">
+      <UniqueIdentifier>{b85655c2-a1ad-4304-bb85-5bcd248dd08c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\03. BaseLayer Objects\08. EventHandler">
+      <UniqueIdentifier>{f7935d1f-4171-4550-a9d2-6b79e83311ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\SelectRange">
+      <UniqueIdentifier>{d0514bc8-7149-4a51-9cf7-1d357564c964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\LineRenderer">
+      <UniqueIdentifier>{d001b99b-bad9-4e18-8d91-238631afb536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\TextBox">
+      <UniqueIdentifier>{4c9e140d-68d8-4252-9e7f-16659d2ed838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\TextRenderer">
+      <UniqueIdentifier>{6c4a95af-fa60-4147-9fac-a1d638fdb0b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\03. BaseLayer Objects\09. Font">
+      <UniqueIdentifier>{a134cbee-2542-4d72-9fe2-782f5bf5dc44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\TextBox\States">
+      <UniqueIdentifier>{ace55cfb-ab2f-42cd-99e3-98e30cd1ca57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\TextBox\States\01. None">
+      <UniqueIdentifier>{8975d495-9747-4d6d-96d7-ad34df733ba4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\TextBox\States\02. Typing">
+      <UniqueIdentifier>{bd83f717-2e91-4556-97eb-d73bd40a2282}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DXUT\Optional\directx.ico">
+      <Filter>01. ENGINE\06. Other\Resource Files</Filter>
+    </None>
+    <ClInclude Include="DXUT\Core\DXUT.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Core\DXUTenum.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Core\DXUTmisc.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClCompile Include="DXUT\Core\DXUT.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Core\DXUTenum.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Core\DXUTmisc.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <ClInclude Include="DXUT\Optional\DXUTcamera.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTgui.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTres.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTsettingsdlg.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKmesh.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKmisc.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClCompile Include="DXUT\Optional\DXUTcamera.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTgui.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTres.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTsettingsdlg.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKmesh.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKmisc.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <None Include="Managers.h">
+      <Filter>01. ENGINE\05. Core Define &amp; Includes</Filter>
+    </None>
+    <None Include="cpp.hint">
+      <Filter>01. ENGINE\06. Other</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Project.cpp" />
+    <ClCompile Include="MainGame.cpp">
+      <Filter>01. ENGINE\01. MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>01. ENGINE\02. Managers\Singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>01. ENGINE\02. Managers\01. Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\01. Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiSprite.cpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\01. Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>01. ENGINE\02. Managers\02. Render Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\02. Timer &amp; Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>01. ENGINE\04. Components\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\03. Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorManager.cpp">
+      <Filter>01. ENGINE\02. Managers\03. Actor Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>01. ENGINE\04. Components\01. Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>01. ENGINE\06. Other\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>01. ENGINE\02. Managers\04. Scene Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\04. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>01. ENGINE\04. Components\02. Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\05. Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroScene.cpp">
+      <Filter>02. INGAME\01. Scenes\01. Intro Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Frame.cpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\06. Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>01. ENGINE\02. Managers\05. Input Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>01. ENGINE\02. Managers\06. Collision Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>01. ENGINE\04. Components\03. Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Rigidbody.cpp">
+      <Filter>01. ENGINE\04. Components\04. Rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>01. ENGINE\04. Components\05. Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundSource.cpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\07. SoundSource</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKsound.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKwavefile.cpp">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="Soldier.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier</Filter>
+    </ClCompile>
+    <ClCompile Include="Wobble.cpp">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\Wobble</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>02. INGAME\01. Scenes\02. Stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseState.cpp">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29\BaseState</Filter>
+    </ClCompile>
+    <ClCompile Include="SoldierIdle.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\01. Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="SoldierMove.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\02. Move</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorUnit.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorIdle.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\01. Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorTalk.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\02. Talk</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\08. EventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectRange.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\SelectRange</Filter>
+    </ClCompile>
+    <ClCompile Include="LineRenderer.cpp">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\LineRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBox.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="TextRenderer.cpp">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\TextRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\09. Font</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBoxNone.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox\States\01. None</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBoxTyping.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox\States\02. Typing</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CLInclude Include="resource.h">
+      <Filter>01. ENGINE\06. Other\Resource Files</Filter>
+    </CLInclude>
+    <ResourceCompile Include="Project.rc">
+      <Filter>01. ENGINE\06. Other\Resource Files</Filter>
+    </ResourceCompile>
+    <ClInclude Include="MainGame.h">
+      <Filter>01. ENGINE\01. MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>01. ENGINE\02. Managers\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>01. ENGINE\02. Managers\01. Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\01. Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>01. ENGINE\05. Core Define &amp; Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>01. ENGINE\05. Core Define &amp; Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiSprite.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\01. Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>01. ENGINE\02. Managers\02. Render Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\02. Timer &amp; Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>01. ENGINE\04. Components\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\03. Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorManager.h">
+      <Filter>01. ENGINE\02. Managers\03. Actor Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>01. ENGINE\04. Components\01. Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>01. ENGINE\06. Other\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>01. ENGINE\02. Managers\04. Scene Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\04. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>01. ENGINE\04. Components\02. Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\05. Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroScene.h">
+      <Filter>02. INGAME\01. Scenes\01. Intro Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.hpp">
+      <Filter>01. ENGINE\03. BaseLayer Objects\03. Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumTypes.h">
+      <Filter>02. INGAME\03. Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Frame.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\06. Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\02. Timer &amp; Time</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>01. ENGINE\02. Managers\05. Input Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyCode.hpp">
+      <Filter>01. ENGINE\06. Other\KeyCode</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.hpp">
+      <Filter>01. ENGINE\04. Components\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>01. ENGINE\02. Managers\06. Collision Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>01. ENGINE\04. Components\03. Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Rigidbody.h">
+      <Filter>01. ENGINE\04. Components\04. Rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>01. ENGINE\04. Components\05. Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundSource.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\07. SoundSource</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKwavefile.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKsound.h">
+      <Filter>01. ENGINE\06. Other\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="Soldier.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier</Filter>
+    </ClInclude>
+    <ClInclude Include="Wobble.h">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\Wobble</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>02. INGAME\01. Scenes\02. Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="FSM.h">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29\BaseState</Filter>
+    </ClInclude>
+    <ClInclude Include="SoldierIdle.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\01. Idle</Filter>
+    </ClInclude>
+    <ClInclude Include="FSM.hpp">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29</Filter>
+    </ClInclude>
+    <ClInclude Include="SoldierMove.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\02. Move</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorUnit.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorIdle.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\01. Idle</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorTalk.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\02. Talk</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\08. EventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectRange.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\SelectRange</Filter>
+    </ClInclude>
+    <ClInclude Include="LineRenderer.h">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\LineRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBox.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox</Filter>
+    </ClInclude>
+    <ClInclude Include="TextRenderer.h">
+      <Filter>02. INGAME\02. Components\02. Object to use indirectly\TextRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>01. ENGINE\03. BaseLayer Objects\09. Font</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBoxNone.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox\States\01. None</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBoxTyping.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox\States\02. Typing</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeDefines.h">
+      <Filter>02. INGAME\03. Types</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
