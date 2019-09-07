@@ -15,6 +15,8 @@ private:
 	TextRenderer* m_pTimePanelText = nullptr;
 	TextRenderer* m_pMissionPanelText = nullptr;
 
+	Actor* m_pBlackFadePanel = nullptr;
+
 public:
 
 	// BaseState을(를) 통해 상속됨

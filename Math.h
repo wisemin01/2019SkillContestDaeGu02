@@ -167,6 +167,7 @@ public:
 	Color(CONST FLOAT* v) : D3DXCOLOR(v) {}
 	Color(CONST D3DXFLOAT16* v) : D3DXCOLOR(v) {}
 	Color(CONST D3DCOLORVALUE& v) : D3DXCOLOR(v) {}
+	Color(CONST D3DXCOLOR& v) : D3DXCOLOR(v) {}
 	Color(FLOAT r, FLOAT g, FLOAT b, FLOAT a) : D3DXCOLOR(r, g, b, a) {}
 
 	static const Color Red;

@@ -398,7 +398,6 @@
     <ClCompile Include="DXUT\Optional\SDKsound.cpp" />
     <ClCompile Include="DXUT\Optional\SDKwavefile.cpp" />
     <ClCompile Include="EventHandler.cpp" />
-    <ClCompile Include="Fade.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Frame.cpp" />
     <ClCompile Include="InputManager.cpp" />
@@ -448,6 +447,7 @@
     <ClInclude Include="DXUT\Optional\SDKwavefile.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Fade.h" />
+    <ClInclude Include="Fade.hpp" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="Frame.h" />
     <ClInclude Include="FSM.h" />

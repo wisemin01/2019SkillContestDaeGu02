@@ -76,6 +76,15 @@ public:
 	};
 };
 
+static class FadeTarget
+{
+public:
+	enum : int
+	{
+		None = -1,
+		Renderer_Alpha
+	};
+};
 
 static class Window
 {

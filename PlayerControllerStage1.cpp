@@ -5,6 +5,7 @@
 #include "PlayerController.h"
 #include "TextBox.h"
 #include "OperatorUnit.h"
+#include "Fade.h"
 #include "TextRenderer.h"
 
 void PlayerControllerStage1::Enter()
@@ -44,6 +45,9 @@ void PlayerControllerStage1::Start()
 
 	SoundSource::Load("button-3", L"Sound/button-3.wav")->DuplicatePlay();
 	m_pMissionPanelText->SetContext(L"모든 함선들을\n해운대로 정착시키자.");
+
+	m_pBlackFadePanel->renderer->CurrentAnime->AnimeColor = Color::White;
+	m_pBlackFadePanel->AddComponent<Fade<Color>>()->Set(Color(0, 0, 0, 0), FadeTarget::Renderer_Alpha, 0.006f);
 }
 
 void PlayerControllerStage1::CreateStage1UI()
@@ -61,6 +65,14 @@ void PlayerControllerStage1::CreateStage1UI()
 	pMissionPanelBase->transform->Position = Vector3(60, 192, 0);
 
 	m_pMissionPanelText = pMissionPanelBase->GetComponent<TextRenderer>();
+
+	m_pBlackFadePanel = ACTOR.Create(TagType::UI);
+
+	m_pBlackFadePanel->renderer->RenderType = RenderType::Rendering_UI;
+	m_pBlackFadePanel->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Black")));
+	m_pBlackFadePanel->renderer->Change(UnitStateType::Idle);
+
+	m_pBlackFadePanel->transform->Position = Window::Center;
 }
 
 void PlayerControllerStage1::InputHelp()

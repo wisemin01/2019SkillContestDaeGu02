@@ -19,8 +19,9 @@ public:
 
 	Sprite* GetSprite() { return m_pSprite; }
 	void SetColor(const Color& color) { m_tColor = color; }
+	Color GetColor() { return m_tColor; }
 
-	PropertyG(GetSprite)	Sprite* AnimeSprite;
-	PropertyS(SetColor)		Color	AnimeColor;
+	PropertyG(GetSprite)			Sprite* AnimeSprite;
+	PropertyGS(GetColor, SetColor)	Color	AnimeColor;
 };
 

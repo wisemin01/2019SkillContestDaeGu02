@@ -16,11 +16,14 @@ private:
 	bool m_bIsEndListenTutorial = false;
 	bool m_bIsWarningTimeAttack = false;
 	bool m_bIsWarningTimeEnd	= false;
+	bool m_bIsBlackFadeEnd		= false;
 
 	bool m_bIsDisplayQuest[2]	= { false };
 
 	TextRenderer* m_pTimePanelText = nullptr;
 	TextRenderer* m_pMissionPanelText = nullptr;
+
+	Actor* m_pBlackFadePanel = nullptr;
 
 	OperatorUnit* GetOperator();
 

@@ -6,6 +6,7 @@
 #include "TextBox.h"
 #include "OperatorUnit.h"
 #include "TextRenderer.h"
+#include "Fade.h"
 
 OperatorUnit* PlayerControllerTutorial::GetOperator()
 {
@@ -74,6 +75,14 @@ void PlayerControllerTutorial::CreateTutorialUI()
 	pMissionPanelBase->transform->Position = Vector3(60, 192, 0);
 
 	m_pMissionPanelText = pMissionPanelBase->GetComponent<TextRenderer>();
+
+	m_pBlackFadePanel = ACTOR.Create(TagType::UI);
+
+	m_pBlackFadePanel->renderer->RenderType = RenderType::Rendering_UI;
+	m_pBlackFadePanel->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Black")));
+	m_pBlackFadePanel->renderer->Change(UnitStateType::Idle);
+
+	m_pBlackFadePanel->transform->Position = Window::Center;
 }
 
 void PlayerControllerTutorial::Start()
@@ -91,6 +100,9 @@ void PlayerControllerTutorial::Start()
 	m_bIsDisplayQuest[0] = true;
 
 	m_bIsStartTutorial = true;
+
+	m_pBlackFadePanel->renderer->CurrentAnime->AnimeColor = Color::White;
+	m_pBlackFadePanel->AddComponent<Fade<Color>>()->Set(Color(0, 0, 0, 0), FadeTarget::Renderer_Alpha, 0.006f);
 }
 
 void PlayerControllerTutorial::Say_Tutorial_Text01()
@@ -157,7 +169,14 @@ void PlayerControllerTutorial::CheckEndTutorial()
 
 	auto pOperator = GetOperator();
 
-	if (pOperator->HasWork() == false)
+	if (m_bIsBlackFadeEnd == false && 
+		pOperator->HasWork() == false)
+	{
+		m_pBlackFadePanel->GetComponent<Fade<Color>>()->Set(Color::White, FadeTarget::Renderer_Alpha, 0.006f);
+		m_bIsBlackFadeEnd = true;
+	}
+
+	if (m_pBlackFadePanel->renderer->CurrentAnime->AnimeColor.a > 0.9f)
 	{
 		SCENE.Change("STAGE1");
 	}
