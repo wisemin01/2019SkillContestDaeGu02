@@ -6,11 +6,15 @@
 
 #include "IntroScene.h"
 #include "Stage1.h"
+#include "Stage2.h"
+#include "Stage3.h"
 
 void MainGame::Initialize()
 {
 	SCENE.Register<IntroScene>("INTRO");
 	SCENE.Register<Stage1>("STAGE1");
+	SCENE.Register<Stage2>("STAGE2");
+	SCENE.Register<Stage3>("STAGE3");
 
 	SCENE.Change("INTRO");
 }

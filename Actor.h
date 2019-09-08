@@ -29,10 +29,10 @@ private:
 
 public:
 
-	inline Transform* GetTransform() { return m_pTransform; }
-	inline Renderer* GetRenderer() { return m_pRenderer; }
-	inline Collider* GetCollider() { return m_pCollider; }
-	inline Rigidbody* GetRigidbody() { return m_pRigidbody; }
+	inline Transform* GetTransform() const { return m_pTransform; }
+	inline Renderer* GetRenderer() const { return m_pRenderer; }
+	inline Collider* GetCollider() const { return m_pCollider; }
+	inline Rigidbody* GetRigidbody() const { return m_pRigidbody; }
 
 	inline void SetTransform(Transform* value) { m_pTransform = value; }
 	inline void SetRenderer(Renderer* value) { m_pRenderer = value; }
@@ -92,6 +92,9 @@ public:
 
 	template <class COM>
 	COM* GetComponent();
+
+	void SetParent(Actor* value);
+	void AddChlid(Actor* value);
 };
 
 #include "Actor.hpp"

@@ -11,6 +11,8 @@ public:
 		Player,
 		Controller,
 		UI,
+		Button,
+		Effect,
 		Operator,
 		Camera
 	};
@@ -60,6 +62,18 @@ public:
 	{
 		None = -1,
 		Typing = 1
+	};
+};
+
+static class MapType
+{
+public:
+	enum : int
+	{
+		None = -1,
+		Haeundae = 1,
+		Seomyeon = 2,
+		Busan_station = 3
 	};
 };
 

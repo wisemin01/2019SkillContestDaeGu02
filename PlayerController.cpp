@@ -12,6 +12,7 @@
 void PlayerController::Initialize()
 {
 	SoundSource::Load("midnight-ride-01a", L"Sound/midnight-ride-01a.wav");
+	SoundSource::Load("FTu1L", L"Sound/FTu1L.wav");
 
 	AddComponent<Rigidbody>();
 	m_pSelector = AddComponent<SelectRange>();
@@ -51,6 +52,16 @@ void PlayerController::Initialize()
 
 void PlayerController::Update()
 {
+	if (Input::GetKeyPress(KeyCode::P))
+	{
+		// 3¹è¸ðµå
+		Time::SetTimeScale(3.0f);
+	}
+	else
+	{
+		Time::SetTimeScale(1.0f);
+	}
+
 	CameraMoveInput();
 	CharacterMoveInput();
 }
@@ -80,7 +91,7 @@ Soldier* PlayerController::SpawnSoldier(Vector3 position, int soldierType)
 {
 	if (soldierType == SoldierType::Ship)
 	{
-		Actor* pShip = ACTOR.Create(TagType::Player);
+		Actor* pShip = ACTOR.Create(TagType::Player, 3);
 
 		Soldier* pSoldier = pShip->AddComponent<Soldier>();
 

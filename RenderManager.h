@@ -27,6 +27,8 @@ public:
 	// Draw All Objects
 	void Render();
 
+	void Sort();
+
 	void SetTransformForSprite(const Matrix* m);
 	void SetTransformForDevice(TransformStateType state, const Matrix* m);
 

@@ -3,19 +3,6 @@
 
 #include "Actor.h"
 
-void Transform::CalculateCacheData()
-{
-	m_bIsMatrixValueCaching = true;
-
-	Matrix world = Matrix::Scaling(m_vLocalScale)
-		* Matrix::RotationZ(m_fLocalRotation)
-		* Matrix::Translation(m_vLocalPosition);
-
-	if (m_pParentTransform != nullptr)
-		world *= m_pParentTransform->GetWorldMatrix();
-
-	m_mWorldMatrixCache = world;
-}
 
 Transform::Transform()
 {
@@ -43,33 +30,36 @@ void Transform::Release()
 void Transform::Translate(const Vector3& v)
 {
 	m_vLocalPosition += v;
-
-	m_bIsMatrixValueCaching = false;
 }
 
 void Transform::Scaling(float s)
 {
 	m_vLocalScale *= s;
-
-	m_bIsMatrixValueCaching = false;
 }
 
 Matrix Transform::GetWorldMatrix()
 {
-	if (m_bIsMatrixValueCaching == false)
-		CalculateCacheData();
+	Matrix world = Matrix::Scaling(m_vLocalScale)
+		* Matrix::RotationZ(m_fLocalRotation)
+		* Matrix::Translation(m_vLocalPosition);
 
-	return m_mWorldMatrixCache;
+	if (m_pParentTransform != nullptr)
+		world *= m_pParentTransform->GetWorldMatrix();
+
+	return world;
 }
 
 void Transform::SetParent(Transform* parent)
 {
 	m_pParentTransform = parent;
-
-	m_bIsMatrixValueCaching = false;
 }
 
-Vector3 Transform::GetPosition()
+void Transform::AddChlid(Transform* chlid)
+{
+	chlid->SetParent(this);
+}
+
+Vector3 Transform::GetPosition() const
 {
 	if (m_pParentTransform)
 	{
@@ -79,7 +69,7 @@ Vector3 Transform::GetPosition()
 	return m_vLocalPosition;
 }
 
-Vector3 Transform::GetScale()
+Vector3 Transform::GetScale() const
 {
 	if (m_pParentTransform)
 	{
@@ -89,7 +79,7 @@ Vector3 Transform::GetScale()
 	return m_vLocalScale;
 }
 
-float Transform::GetRotation()
+float Transform::GetRotation() const
 {
 	if (m_pParentTransform)
 	{
@@ -122,27 +112,19 @@ Transform* Transform::GetParent()
 void Transform::SetPosition(const Vector3& v)
 {
 	m_vLocalPosition = v;
-
-	m_bIsMatrixValueCaching = false;
 }
 
 void Transform::SetScale(const Vector3& v)
 {
 	m_vLocalScale = v;
-
-	m_bIsMatrixValueCaching = false;
 }
 
 void Transform::SetRotation(float v)
 {
 	m_fLocalRotation = v;
-
-	m_bIsMatrixValueCaching = false;
 }
 
 void Transform::Rotate(float value)
 {
 	m_fLocalRotation = value;
-
-	m_bIsMatrixValueCaching = false;
 }

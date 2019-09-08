@@ -4,7 +4,8 @@
 class IntroScene :
 	public Scene
 {
-	// Scene을(를) 통해 상속됨
+private:
+
 	virtual void Initialize() override;
 	virtual void Update() override;
 	virtual void Render() override;

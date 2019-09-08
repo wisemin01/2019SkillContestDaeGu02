@@ -16,7 +16,8 @@ public:
 	// 새 엑터를 생성합니다.
 	// DEFAULT_COMPONENT 메크로 옵션을 통해 기본으로 엑터에 내장할 컴포넌트를
 	// 지정할 수 있습니다.
-	Actor* Create(Tag tag = -1, bool isVisible = true, bool isActive = true);
+	Actor* Create(Tag tag = -1, bool isVisible = true, bool isActive = true, int layer = 0);
+	Actor* Create(Tag tag, int layer);
 
 	// 새 빈 엑터를 생성합니다.
 	Actor* CreateEmpty(Tag tag = -1, bool isVisible = true, bool isActive = true);

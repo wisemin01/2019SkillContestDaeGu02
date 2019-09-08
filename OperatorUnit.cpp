@@ -11,7 +11,7 @@
 
 void OperatorUnit::Initialize()
 {
-	renderer->RenderType = RenderType::Rendering_UI;
+	renderer->RenderType = RenderType::UI;
 	renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Operator")->Get(1)));
 	renderer->AddAnimation(UnitStateType::Talk, new Animation(Sprite::Find("Operator"), 0.2f));
 

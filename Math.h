@@ -1,4 +1,5 @@
 #pragma once
+#include <random>
 
 using ulong = unsigned long;
 using uint = unsigned int;
@@ -72,6 +73,11 @@ struct Vector3
 	Vector3 operator*(float s)
 	{
 		return Vector3(x * s, y * s, z * s);
+	}
+
+	Vector3 operator*(const Vector3& other) const
+	{
+		return  Vector3(x * other.x, y * other.y, z * other.z);
 	}
 
 	static const Vector3 Zero;
@@ -193,6 +199,37 @@ public:
 	static bool Intersect(const Circle& c1, const Circle& c2);
 };
 
+class Random
+{
+private:
+	std::random_device m_RandomDevice;
+	std::mt19937_64 m_MersenneTwister64;
+public:
+	Random() {
+		m_MersenneTwister64 = std::mt19937_64(m_RandomDevice());
+	}
+
+	static Random& Instance()
+	{
+		static Random random;
+		return random;
+	}
+
+	float Get(float min, float max)
+	{
+		uniform_real_distribution<float> range(min, max);
+
+		return range(m_MersenneTwister64);
+	}
+
+	int Get(int min, int max)
+	{
+		uniform_int_distribution<int> range(min, max);
+
+		return range(m_MersenneTwister64);
+	}
+};
+
 ostream& operator << (ostream& os, const Vector2& value);
 ostream& operator << (ostream& os, const Vector3& value);
 ostream& operator << (ostream& os, const Vector4& value);
@@ -200,6 +237,8 @@ ostream& operator << (ostream& os, const Quaternion& value);
 ostream& operator << (ostream& os, const Matrix& value);
 
 bool			PointInRect(const RECT* rc, const Vector3* pt);
+bool			IntersectRect(const RECT* rc1, const RECT* rc2);
+
 std::string		SecondsToTimeStringA(float seconds);
 std::wstring	SecondsToTimeStringW(float seconds);
 

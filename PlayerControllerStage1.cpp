@@ -26,18 +26,20 @@ void PlayerControllerStage1::Stay()
 		m_bIsStart = true;
 	}
 
+	InputHelp();
 	TimeUpdate();
 }
 
 void PlayerControllerStage1::Exit()
 {
+	SoundSource::Find("FTu1L")->Stop();
 }
 
 void PlayerControllerStage1::Start()
 {
-	m_pFSM->Owner->m_pTimeAttackTimer = Timer::Create(180.0f);
+	m_pFSM->Owner->m_pTimeAttackTimer = Timer::Create(300.0f);
 
-	SoundSource::Find("midnight-ride-01a")->Play(true);
+	SoundSource::Find("FTu1L")->Play(true);
 
 	m_pFSM->Owner->Say(L"안녕하세요 사령관님!");
 	m_pFSM->Owner->Say(L"이번엔 아군 함선들을 지휘해서\n함선들이 해운대에 상륙할 수\n있도록 도와주시면 됩니다.");
@@ -47,7 +49,7 @@ void PlayerControllerStage1::Start()
 	m_pMissionPanelText->SetContext(L"모든 함선들을\n해운대로 정착시키자.");
 
 	m_pBlackFadePanel->renderer->CurrentAnime->AnimeColor = Color::White;
-	m_pBlackFadePanel->AddComponent<Fade<Color>>()->Set(Color(0, 0, 0, 0), FadeTarget::Renderer_Alpha, 0.006f);
+	m_pBlackFadePanel->AddComponent<Fade<Color>>()->Set(Color(0, 0, 0, 0), FadeTarget::Renderer_Alpha, -0.35f);
 }
 
 void PlayerControllerStage1::CreateStage1UI()
@@ -68,7 +70,7 @@ void PlayerControllerStage1::CreateStage1UI()
 
 	m_pBlackFadePanel = ACTOR.Create(TagType::UI);
 
-	m_pBlackFadePanel->renderer->RenderType = RenderType::Rendering_UI;
+	m_pBlackFadePanel->renderer->RenderType = RenderType::UI;
 	m_pBlackFadePanel->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Black")));
 	m_pBlackFadePanel->renderer->Change(UnitStateType::Idle);
 
@@ -79,7 +81,7 @@ void PlayerControllerStage1::InputHelp()
 {
 	if (Input::GetKeyDown(KeyCode::Space))
 	{
-		m_pFSM->Owner->Say(L"도움이 필요하신가요?\n혹시 설명이 더 필요하다면 <H> 키를 눌러주세요.");
+		m_pFSM->Owner->Say(L"도움이 필요하신가요?\n혹시 설명이 더 필요하다면\n<H> 키를 눌러주세요.");
 	}
 
 	if (Input::GetKeyDown(KeyCode::H))

@@ -7,6 +7,7 @@
 #include "OperatorUnit.h"
 #include "TextRenderer.h"
 #include "Fade.h"
+#include "Camera.h"
 
 OperatorUnit* PlayerControllerTutorial::GetOperator()
 {
@@ -46,6 +47,12 @@ void PlayerControllerTutorial::Stay()
 		return;
 	}
 
+	if (Input::GetKeyDown(KeyCode::Space))
+	{
+		Camera::MainCamera()->SetShakePower(30.0f);
+		Camera::MainCamera()->Shake(0.5f);
+	}
+
 	CheckDisplayQuest();
 	CheckEndTutorial();
 	TimeUpdate();
@@ -53,6 +60,8 @@ void PlayerControllerTutorial::Stay()
 
 void PlayerControllerTutorial::Exit()
 {
+	SoundSource::Find("midnight-ride-01a")->Stop();
+
 	m_pFSM->Owner->OnSelect.Remove(OnSelect);
 	m_pFSM->Owner->OnRightClick.Remove(OnMove);
 
@@ -78,7 +87,7 @@ void PlayerControllerTutorial::CreateTutorialUI()
 
 	m_pBlackFadePanel = ACTOR.Create(TagType::UI);
 
-	m_pBlackFadePanel->renderer->RenderType = RenderType::Rendering_UI;
+	m_pBlackFadePanel->renderer->RenderType = RenderType::UI;
 	m_pBlackFadePanel->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Black")));
 	m_pBlackFadePanel->renderer->Change(UnitStateType::Idle);
 
@@ -91,6 +100,8 @@ void PlayerControllerTutorial::Start()
 
 	SoundSource::Find("midnight-ride-01a")->Play(true);
 
+	m_pMissionPanelText->SetContext(L"현재 미션이 없습니다.");
+
 	m_pFSM->Owner->Say(L"안녕하세요 사령관님!");
 	m_pFSM->Owner->Say(L"저는 오퍼레이터를 맡은\n○○이라고 합니다.");
 	m_pFSM->Owner->Say(L"지금부터 사령관님께\n조작법을 알려드리려고 합니다.");
@@ -102,12 +113,12 @@ void PlayerControllerTutorial::Start()
 	m_bIsStartTutorial = true;
 
 	m_pBlackFadePanel->renderer->CurrentAnime->AnimeColor = Color::White;
-	m_pBlackFadePanel->AddComponent<Fade<Color>>()->Set(Color(0, 0, 0, 0), FadeTarget::Renderer_Alpha, 0.006f);
+	m_pBlackFadePanel->AddComponent<Fade<Color>>()->Set(Color(0, 0, 0, 0), FadeTarget::Renderer_Alpha, -0.35f);
 }
 
 void PlayerControllerTutorial::Say_Tutorial_Text01()
 {
-	m_pMissionPanelText->SetContext(L"");
+	m_pMissionPanelText->SetContext(L"현재 미션이 없습니다.");
 
 	SoundSource::Load("mission-success", L"Sound/mission-success.wav")->Play();
 
@@ -120,7 +131,7 @@ void PlayerControllerTutorial::Say_Tutorial_Text01()
 
 void PlayerControllerTutorial::Say_Tutorial_Text02()
 {
-	m_pMissionPanelText->SetContext(L"");
+	m_pMissionPanelText->SetContext(L"현재 미션이 없습니다.");
 
 	SoundSource::Load("mission-success", L"Sound/mission-success.wav")->Play();
 
@@ -172,11 +183,11 @@ void PlayerControllerTutorial::CheckEndTutorial()
 	if (m_bIsBlackFadeEnd == false && 
 		pOperator->HasWork() == false)
 	{
-		m_pBlackFadePanel->GetComponent<Fade<Color>>()->Set(Color::White, FadeTarget::Renderer_Alpha, 0.006f);
+		m_pBlackFadePanel->GetComponent<Fade<Color>>()->Set(Color(1, 1, 1, 1), FadeTarget::Renderer_Alpha, 0.45f);
 		m_bIsBlackFadeEnd = true;
 	}
 
-	if (m_pBlackFadePanel->renderer->CurrentAnime->AnimeColor.a > 0.9f)
+	if (m_pBlackFadePanel->renderer->CurrentAnime->GetAlpha() >= 1.0f)
 	{
 		SCENE.Change("STAGE1");
 	}

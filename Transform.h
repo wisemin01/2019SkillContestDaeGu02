@@ -12,14 +12,6 @@ private:
 
 	Transform* m_pParentTransform	= nullptr;
 
-	bool m_bIsMatrixValueCaching	= false;
-
-	Matrix m_mWorldMatrixCache		= Matrix::IdentityCoord;
-
-private:
-
-	void CalculateCacheData();
-
 public:
 	Transform();
 	virtual ~Transform();
@@ -36,12 +28,13 @@ public:
 	Matrix GetWorldMatrix();
 
 	void SetParent(Transform* parent);
+	void AddChlid(Transform* chlid);
 
 public:
 
-	Vector3 GetPosition();
-	Vector3 GetScale();
-	float GetRotation();
+	Vector3 GetPosition() const;
+	Vector3 GetScale() const;
+	float GetRotation() const;
 
 	Vector3 GetLocalPosition();
 	Vector3 GetLocalScale();

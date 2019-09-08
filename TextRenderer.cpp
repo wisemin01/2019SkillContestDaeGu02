@@ -5,7 +5,7 @@
 
 void TextRenderer::Initialize()
 {
-	Super::m_RenderType = RenderType::Rendering_UI;
+	Super::m_RenderType = RenderType::UI;
 	Super::Initialize();
 }
 

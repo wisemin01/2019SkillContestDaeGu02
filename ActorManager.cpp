@@ -12,7 +12,7 @@
 #define DEFAULT_COMPONENT	COMPONENTTYPE_TRANSFORM | COMPONENTTYPE_RENDERER
 
 
-Actor* ActorManager::Create(Tag tag, bool isVisible, bool isActive)
+Actor* ActorManager::Create(Tag tag, bool isVisible, bool isActive, int layer)
 {
 	Actor* A = new Actor(tag, isVisible, isActive);
 
@@ -22,6 +22,25 @@ Actor* ActorManager::Create(Tag tag, bool isVisible, bool isActive)
 
 #if (DEFAULT_COMPONENT & COMPONENTTYPE_RENDERER)
 	A->AddComponent<Renderer>();
+	A->renderer->Layer = layer;
+#endif
+
+	m_listActors.push_back(A);
+
+	return A;
+}
+
+Actor* ActorManager::Create(Tag tag, int layer)
+{
+	Actor* A = new Actor(tag);
+
+#if (DEFAULT_COMPONENT & COMPONENTTYPE_TRANSFORM)
+	A->AddComponent<Transform>();
+#endif
+
+#if (DEFAULT_COMPONENT & COMPONENTTYPE_RENDERER)
+	A->AddComponent<Renderer>();
+	A->renderer->Layer = layer;
 #endif
 
 	m_listActors.push_back(A);

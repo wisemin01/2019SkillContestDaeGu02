@@ -391,6 +391,7 @@
     <ClCompile Include="ActorManager.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="BaseState.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
@@ -425,6 +426,9 @@
     <ClCompile Include="SoundSource.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Stage1.cpp" />
+    <ClCompile Include="Stage2.cpp" />
+    <ClCompile Include="Stage3.cpp" />
+    <ClCompile Include="StageSelectMap.cpp" />
     <ClCompile Include="TextBox.cpp" />
     <ClCompile Include="TextBoxNone.cpp" />
     <ClCompile Include="TextBoxTyping.cpp" />
@@ -437,6 +441,7 @@
     <ClInclude Include="ActorManager.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="BaseState.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionManager.h" />
@@ -479,6 +484,9 @@
     <ClInclude Include="SoundSource.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Stage1.h" />
+    <ClInclude Include="Stage2.h" />
+    <ClInclude Include="Stage3.h" />
+    <ClInclude Include="StageSelectMap.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="EnumTypes.h" />
     <ClInclude Include="TextBox.h" />

@@ -21,12 +21,12 @@ RenderManager::~RenderManager()
 
 void RenderManager::Register(Renderer* renderer)
 {
-	if (renderer->GetRenderType() == RenderType::Rendering_ObjectSpace)
+	if (renderer->GetRenderType() == RenderType::ObjectSpace)
 	{
 		m_listRenderers.push_back(renderer);
 	}
 
-	if (renderer->GetRenderType() == RenderType::Rendering_UI)
+	if (renderer->GetRenderType() == RenderType::UI)
 	{
 		m_listUIRenderers.push_back(renderer);
 	}
@@ -34,12 +34,12 @@ void RenderManager::Register(Renderer* renderer)
 
 void RenderManager::Unregister(Renderer* renderer)
 {
-	if (renderer->GetRenderType() == RenderType::Rendering_ObjectSpace)
+	if (renderer->GetRenderType() == RenderType::ObjectSpace)
 	{
 		m_listRenderers.remove(renderer);
 	}
 
-	if (renderer->GetRenderType() == RenderType::Rendering_UI)
+	if (renderer->GetRenderType() == RenderType::UI)
 	{
 		m_listUIRenderers.remove(renderer);
 	}
@@ -76,6 +76,32 @@ void RenderManager::Render()
 
 		m_pSprite->End();
 	}
+}
+
+void RenderManager::Sort()
+{
+	m_listRenderers.sort([&](const Renderer* left, const Renderer* right) 
+		{
+			if (left->Layer < right->Layer)
+				return true;
+
+			if (left->Layer == right->Layer)
+			{
+				return left->transform->Position.y < right->transform->Position.y;
+			}
+
+			return false;
+		}
+	);
+
+	m_listUIRenderers.sort([&](Renderer* left, Renderer* right) 
+		{
+			if (left->Layer < right->Layer)
+				return true;
+
+			return false;
+		}
+	);
 }
 
 void RenderManager::SetTransformForSprite(const Matrix* m)

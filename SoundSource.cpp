@@ -39,6 +39,11 @@ void SoundSource::DuplicatePlay(bool isLoop, int volume)
 	lpDS->Play(0, 0, isLoop);
 }
 
+void SoundSource::Stop()
+{
+	m_pSoundSource->Stop();
+}
+
 SoundSource* SoundSource::Find(const string& key)
 {
 	return RESOURCE.FindSound(key);

@@ -18,6 +18,7 @@ void SceneManager::Update()
 		if (m_pCurrentScene)
 		{
 			m_pCurrentScene->Release();
+			m_pCurrentScene->ReleaseBase();
 		}
 
 		m_pNextScene->Initialize();
@@ -34,6 +35,7 @@ void SceneManager::Update()
 	if (m_pCurrentScene)
 	{
 		m_pCurrentScene->Update();
+		m_pCurrentScene->UpdateBase();
 	}
 }
 
@@ -42,6 +44,7 @@ void SceneManager::Render()
 	if (m_pCurrentScene)
 	{
 		m_pCurrentScene->Render();
+		m_pCurrentScene->RenderBase();
 	}
 }
 
@@ -50,6 +53,7 @@ void SceneManager::Reset()
 	if (m_pCurrentScene)
 	{
 		m_pCurrentScene->Release();
+		m_pCurrentScene->ReleaseBase();
 	}
 
 	for (auto iter : m_mapScenes)

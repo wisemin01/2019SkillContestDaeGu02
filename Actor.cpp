@@ -114,3 +114,13 @@ void Actor::SetIsActive(bool value)
 		OnDisable();
 	}
 }
+
+void Actor::SetParent(Actor* value)
+{
+	transform->SetParent(value->transform);
+}
+
+void Actor::AddChlid(Actor* value)
+{
+	transform->AddChlid(value->transform);
+}

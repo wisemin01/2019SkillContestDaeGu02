@@ -38,6 +38,8 @@ void Soldier::Initialize()
 	MainPlayerController->OnSelect		+= OnSelect;
 	MainPlayerController->OnDeselect	+= OnDeselect;
 	MainPlayerController->OnStop		+= OnStop;
+
+	CreateSelectEffect();
 }
 
 void Soldier::Update()
@@ -73,15 +75,29 @@ void Soldier::OnMoveCommand(Vector3 v)
 
 void Soldier::OnSelectCommand(RECT rc)
 {
-	m_bIsSelect = PointInRect(&rc, &transform->Position);
+	m_bIsSelect = IntersectRect(&rc, &collider->GetWorldRange());
+
+	m_pSelectEffect->IsVisible = m_bIsSelect;
 }
 
 void Soldier::OnDeselectCommand(EmptyEventArg e)
 {
 	m_bIsSelect = false;
+	m_pSelectEffect->IsVisible = m_bIsSelect;
 }
 
 void Soldier::OnStopCommand(EmptyEventArg e)
 {
 	m_vEndPosition = transform->Position;
+}
+
+void Soldier::CreateSelectEffect()
+{
+	m_pSelectEffect = ACTOR.Create(TagType::Effect, renderer->Layer + 1);
+
+	m_pSelectEffect->renderer->AddAnimation(0, new Animation(Sprite::Find("select-effect"), 0.05f));
+	m_pSelectEffect->renderer->Change(0);
+	m_pSelectEffect->SetParent(this->Base);
+
+	m_pSelectEffect->IsVisible = false;
 }

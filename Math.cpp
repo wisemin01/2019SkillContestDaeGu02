@@ -384,6 +384,12 @@ bool PointInRect(const RECT* rc, const Vector3* pt)
 		);
 }
 
+bool IntersectRect(const RECT* rc1, const RECT* rc2)
+{
+	RECT rc;
+	return IntersectRect(&rc, rc1, rc2);
+}
+
 std::string SecondsToTimeStringA(float seconds)
 {
 	int m = (int)seconds / 60;

@@ -81,12 +81,12 @@ private:
 
 public:
 
-	inline Actor* GetActor() { return m_pBaseActor; }
+	inline Actor* GetActor() const { return m_pBaseActor; }
 
-	Transform* GetTransform();
-	Renderer* GetRenderer();
-	Collider* GetCollider();
-	Rigidbody* GetRigidbody();
+	Transform* GetTransform() const;
+	Renderer* GetRenderer() const;
+	Collider* GetCollider() const;
+	Rigidbody* GetRigidbody() const;
 };
 
 #include "Component.hpp"

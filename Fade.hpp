@@ -22,8 +22,16 @@ inline void Fade<T>::Update()
 	switch (m_iType)
 	{
 	case FadeTarget::Renderer_Alpha:
-		renderer->CurrentAnime->SetColor(
-			Lerp(renderer->CurrentAnime->AnimeColor, m_End, m_fSpeed));
+		//renderer->CurrentAnime->SetColor(
+		//	Lerp(renderer->CurrentAnime->AnimeColor, m_End, m_fSpeed * Time::Delta()));
+
+		renderer->CurrentAnime->SetAlpha(renderer->CurrentAnime->GetAlpha() + m_fSpeed * Time::Delta());
+
+		if (renderer->CurrentAnime->GetAlpha() >= 1.0f)
+			renderer->CurrentAnime->SetAlpha(1.0f);
+
+		if (renderer->CurrentAnime->GetAlpha() <= 0.0f)
+			renderer->CurrentAnime->SetAlpha(0.0f);
 		break;
 	}
 }

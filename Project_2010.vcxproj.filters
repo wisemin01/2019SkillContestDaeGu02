@@ -132,12 +132,6 @@
     <Filter Include="02. INGAME\01. Scenes\02. Stage1">
       <UniqueIdentifier>{2fe7c70b-846a-4468-8ef4-849f0e0fb7bc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29">
-      <UniqueIdentifier>{27f8bb88-3949-4b2b-87c7-6d65a6a447f0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29\BaseState">
-      <UniqueIdentifier>{3dd6c1a4-55e5-4fcb-a244-eb27bbe248cd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. INGAME\02. Components\01. Object to use directly\OperatorUnit">
       <UniqueIdentifier>{4d0bee7f-0472-43e8-8d92-cb18d6d134c5}</UniqueIdentifier>
     </Filter>
@@ -165,14 +159,8 @@
     <Filter Include="02. INGAME\02. Components\01. Object to use directly\SelectRange">
       <UniqueIdentifier>{d0514bc8-7149-4a51-9cf7-1d357564c964}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\LineRenderer">
-      <UniqueIdentifier>{d001b99b-bad9-4e18-8d91-238631afb536}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. INGAME\02. Components\01. Object to use directly\TextBox">
       <UniqueIdentifier>{4c9e140d-68d8-4252-9e7f-16659d2ed838}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\TextRenderer">
-      <UniqueIdentifier>{6c4a95af-fa60-4147-9fac-a1d638fdb0b1}</UniqueIdentifier>
     </Filter>
     <Filter Include="01. ENGINE\03. BaseLayer Objects\09. Font">
       <UniqueIdentifier>{a134cbee-2542-4d72-9fe2-782f5bf5dc44}</UniqueIdentifier>
@@ -200,6 +188,33 @@
     </Filter>
     <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\Fade">
       <UniqueIdentifier>{627c4cb4-943c-4d50-ab5e-f3c38290e4ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\Button">
+      <UniqueIdentifier>{facdb8c1-2fea-4705-baf9-b10e67d40461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\Helper Components">
+      <UniqueIdentifier>{da76cf07-3204-4927-a741-5959d42386eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\Helper Components\FSM %28Finite State Machine%29">
+      <UniqueIdentifier>{27f8bb88-3949-4b2b-87c7-6d65a6a447f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\Helper Components\FSM %28Finite State Machine%29\BaseState">
+      <UniqueIdentifier>{3dd6c1a4-55e5-4fcb-a244-eb27bbe248cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\Helper Components\LineRenderer">
+      <UniqueIdentifier>{d001b99b-bad9-4e18-8d91-238631afb536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. ENGINE\04. Components\Helper Components\TextRenderer">
+      <UniqueIdentifier>{6c4a95af-fa60-4147-9fac-a1d638fdb0b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\01. Object to use directly\StageSelectMap">
+      <UniqueIdentifier>{6cb7f578-41c0-409a-88d2-7872582f69fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\01. Scenes\03. Stage2">
+      <UniqueIdentifier>{35c62654-54c5-46d0-8995-3d9f98759652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\01. Scenes\03. Stage3">
+      <UniqueIdentifier>{c62f50d2-f330-4484-a103-9f48cf090b71}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -360,7 +375,7 @@
       <Filter>02. INGAME\01. Scenes\02. Stage1</Filter>
     </ClCompile>
     <ClCompile Include="BaseState.cpp">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29\BaseState</Filter>
+      <Filter>01. ENGINE\04. Components\Helper Components\FSM %28Finite State Machine%29\BaseState</Filter>
     </ClCompile>
     <ClCompile Include="SoldierIdle.cpp">
       <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\01. Idle</Filter>
@@ -384,13 +399,13 @@
       <Filter>02. INGAME\02. Components\01. Object to use directly\SelectRange</Filter>
     </ClCompile>
     <ClCompile Include="LineRenderer.cpp">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\LineRenderer</Filter>
+      <Filter>01. ENGINE\04. Components\Helper Components\LineRenderer</Filter>
     </ClCompile>
     <ClCompile Include="TextBox.cpp">
       <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox</Filter>
     </ClCompile>
     <ClCompile Include="TextRenderer.cpp">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\TextRenderer</Filter>
+      <Filter>01. ENGINE\04. Components\Helper Components\TextRenderer</Filter>
     </ClCompile>
     <ClCompile Include="Font.cpp">
       <Filter>01. ENGINE\03. BaseLayer Objects\09. Font</Filter>
@@ -406,6 +421,18 @@
     </ClCompile>
     <ClCompile Include="PlayerControllerStage1.cpp">
       <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\02. Stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="StageSelectMap.cpp">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\StageSelectMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2.cpp">
+      <Filter>02. INGAME\01. Scenes\03. Stage2</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage3.cpp">
+      <Filter>02. INGAME\01. Scenes\03. Stage3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -527,16 +554,16 @@
       <Filter>02. INGAME\01. Scenes\02. Stage1</Filter>
     </ClInclude>
     <ClInclude Include="FSM.h">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29</Filter>
+      <Filter>01. ENGINE\04. Components\Helper Components\FSM %28Finite State Machine%29</Filter>
     </ClInclude>
     <ClInclude Include="BaseState.h">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29\BaseState</Filter>
+      <Filter>01. ENGINE\04. Components\Helper Components\FSM %28Finite State Machine%29\BaseState</Filter>
     </ClInclude>
     <ClInclude Include="SoldierIdle.h">
       <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\01. Idle</Filter>
     </ClInclude>
     <ClInclude Include="FSM.hpp">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\FSM %28Finite State Machine%29</Filter>
+      <Filter>01. ENGINE\04. Components\Helper Components\FSM %28Finite State Machine%29</Filter>
     </ClInclude>
     <ClInclude Include="SoldierMove.h">
       <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\02. Move</Filter>
@@ -557,13 +584,13 @@
       <Filter>02. INGAME\02. Components\01. Object to use directly\SelectRange</Filter>
     </ClInclude>
     <ClInclude Include="LineRenderer.h">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\LineRenderer</Filter>
+      <Filter>01. ENGINE\04. Components\Helper Components\LineRenderer</Filter>
     </ClInclude>
     <ClInclude Include="TextBox.h">
       <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox</Filter>
     </ClInclude>
     <ClInclude Include="TextRenderer.h">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\TextRenderer</Filter>
+      <Filter>01. ENGINE\04. Components\Helper Components\TextRenderer</Filter>
     </ClInclude>
     <ClInclude Include="Font.h">
       <Filter>01. ENGINE\03. BaseLayer Objects\09. Font</Filter>
@@ -588,6 +615,18 @@
     </ClInclude>
     <ClInclude Include="Fade.hpp">
       <Filter>02. INGAME\02. Components\02. Object to use indirectly\Fade</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="StageSelectMap.h">
+      <Filter>02. INGAME\02. Components\01. Object to use directly\StageSelectMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2.h">
+      <Filter>02. INGAME\01. Scenes\03. Stage2</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage3.h">
+      <Filter>02. INGAME\01. Scenes\03. Stage3</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

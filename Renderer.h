@@ -7,8 +7,8 @@ public:
 	enum
 	{
 		None = -1,
-		Rendering_ObjectSpace,
-		Rendering_UI
+		ObjectSpace,
+		UI
 	};
 
 };
@@ -23,7 +23,8 @@ protected:
 
 	Animation* m_pCurrentAnime = nullptr;
 
-	int m_RenderType = RenderType::Rendering_ObjectSpace;
+	int m_RenderType = RenderType::ObjectSpace;
+	int m_iRenderLayer = 0;
 public:
 	Renderer() {}
 	virtual ~Renderer() {}
@@ -38,6 +39,9 @@ public:
 	void AddAnimation(int key, Animation* animation);
 	void Change(int key);
 
+	int GetLayer() const { return m_iRenderLayer; }
+	void SetLayer(int value) { m_iRenderLayer = value; }
+
 public:
 
 	Animation* GetCurrentAnimation() { return m_pCurrentAnime; }
@@ -48,6 +52,7 @@ public:
 	void SetRenderType(int renderType);
 
 	PropertyGS(GetRenderType, SetRenderType) int RenderType;
+	PropertyGS(GetLayer, SetLayer) int Layer;
 	PropertyG(GetCurrentAnimation) Animation* CurrentAnime;
 };
 

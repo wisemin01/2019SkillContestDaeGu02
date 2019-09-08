@@ -21,6 +21,8 @@ private:
 
 	FSM<Soldier>* m_pFSM = nullptr;
 
+	Actor* m_pSelectEffect = nullptr;
+
 public:
 
 	EventListener<Vector3>		 * OnRightClick;
@@ -41,5 +43,9 @@ public:
 	void OnSelectCommand(RECT rc);
 	void OnDeselectCommand(EmptyEventArg e);
 	void OnStopCommand(EmptyEventArg e);
+
+private:
+
+	void CreateSelectEffect();
 };
 

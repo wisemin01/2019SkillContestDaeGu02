@@ -15,6 +15,7 @@ public:
 
 	void Play(bool isLoop = false, int volume = 100);
 	void DuplicatePlay(bool isLoop = false, int volume = 100);
+	void Stop();
 
 public:
 

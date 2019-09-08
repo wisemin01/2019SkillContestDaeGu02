@@ -21,6 +21,9 @@ public:
 	void SetColor(const Color& color) { m_tColor = color; }
 	Color GetColor() { return m_tColor; }
 
+	float GetAlpha() { return m_tColor.a; }
+	void SetAlpha(float value) { m_tColor.a = value; }
+
 	PropertyG(GetSprite)			Sprite* AnimeSprite;
 	PropertyGS(GetColor, SetColor)	Color	AnimeColor;
 };
