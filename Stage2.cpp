@@ -9,4 +9,3 @@ void Stage2::Initialize()
 	pActor->AddComponent<TextRenderer>()->Set("메이플스토리 Bold", 50, L"Stage2 는 아직 미구현 스테이지입니다.");
 	pActor->transform->Position = Vector3(100, 100, 0);
 }
-

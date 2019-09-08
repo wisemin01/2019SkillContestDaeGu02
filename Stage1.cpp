@@ -10,13 +10,12 @@
 
 void Stage1::Initialize()
 {
-
 	// ================================================================
 	// RESOURCE LOADING
 	// ================================================================
 
 	{
-		Sprite::Load("Test", "Test.png", );
+		Sprite::Load("Test", "Test/test-ship(%d).png", 2);
 
 		Sprite::Load("Stage1Background", "Stage1/(%d).png", 2);
 		Sprite::Load("Stage1Stone", "Stage1/STONE(%d).png", 4);

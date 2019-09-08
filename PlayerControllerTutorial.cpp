@@ -96,7 +96,7 @@ void PlayerControllerTutorial::CreateTutorialUI()
 
 void PlayerControllerTutorial::Start()
 {
-	m_pFSM->Owner->m_pTimeAttackTimer = Timer::Create(180.0f);
+	m_pFSM->Owner->m_pTimeAttackTimer = Timer::Create(300.0f);
 
 	SoundSource::Find("midnight-ride-01a")->Play(true);
 

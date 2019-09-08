@@ -12,10 +12,17 @@ Circle Collider::GetWorldRange()
 #if (COLLISION_CALCULATE_TYPE & COLLISION_CALCULATETYPE_RECT)
 RECT Collider::GetWorldRange()
 {
-	return {	(long)(m_rcRange.left	* transform->Scale.x + transform->Position.x),
-				(long)(m_rcRange.top	* transform->Scale.y + transform->Position.y), 
-				(long)(m_rcRange.right	* transform->Scale.x + transform->Position.x), 
-				(long)(m_rcRange.bottom * transform->Scale.y + transform->Position.y)
+	Vector3 s = transform->Scale;
+	Vector3 p = transform->Position;
+
+	s.x = fabsf(s.x);
+	s.y = fabsf(s.y);
+	s.z = fabsf(s.z);
+
+	return {	(long)(m_rcRange.left	* s.x + p.x),
+				(long)(m_rcRange.top	* s.y + p.y), 
+				(long)(m_rcRange.right	* s.x + p.x), 
+				(long)(m_rcRange.bottom * s.y + p.y)
 	};
 }
 

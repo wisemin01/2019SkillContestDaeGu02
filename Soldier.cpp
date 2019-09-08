@@ -18,8 +18,8 @@ void Soldier::Initialize()
 
 	collider->SetRange(100, 100);
 
-	renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Operator")->Get(1)));
-	renderer->AddAnimation(UnitStateType::Move, new Animation(Sprite::Find("Operator"), 0.225f));
+	renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Test")->Get(1)));
+	renderer->AddAnimation(UnitStateType::Move, new Animation(Sprite::Find("Test")->Get(1)));
 
 	m_pFSM = AddComponent<FSM<Soldier>>();
 	

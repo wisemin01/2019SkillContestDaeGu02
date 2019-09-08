@@ -22,7 +22,20 @@ void SoldierMove::Stay()
 
 	// 방향 정규화
 	Direction.Normalize();
+	
+	// 스프라이트 방향 뒤집기
+	if (Direction.x > 0)
+	{
+		Vector3 v = m_pFSM->Owner->transform->Scale;
+		m_pFSM->Owner->transform->Scale = Vector3(fabs(v.x), v.y, v.y);
+	}
+	else
+	{
+		Vector3 v = m_pFSM->Owner->transform->Scale;
+		m_pFSM->Owner->transform->Scale = Vector3(-fabs(v.x), v.y, v.y);
+	}
 
+	// Move 상태가 끝났는지 검증
 	if (Length >= m_pFSM->Owner->m_fMoveLimitRange)
 	{
 		// 아직 움직임 상한 범위까지 움직이지 않았다면 이동한다.

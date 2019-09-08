@@ -28,5 +28,6 @@ private:
 	void OnSelectSeomyeon(const EmptyEventArg& e);
 	void OnSelectBusanStation(const EmptyEventArg& e);
 	void OnStartButtonClick(const EmptyEventArg& e);
+	void OnShopButtonClick(const EmptyEventArg& e);
 };
 

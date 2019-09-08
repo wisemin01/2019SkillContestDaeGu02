@@ -54,9 +54,16 @@ void Button::SetRange()
 
 RECT Button::GetWorldRange()
 {
-	return { (long)(m_rcButtonRange.left * transform->Scale.x + transform->Position.x),
-			 (long)(m_rcButtonRange.top * transform->Scale.y + transform->Position.y),
-			 (long)(m_rcButtonRange.right * transform->Scale.x + transform->Position.x),
-			 (long)(m_rcButtonRange.bottom * transform->Scale.y + transform->Position.y)
+	Vector3 s = transform->Scale;
+	Vector3 p = transform->Position;
+
+	s.x = fabsf(s.x);
+	s.y = fabsf(s.y);
+	s.z = fabsf(s.z);
+
+	return {	(long)(m_rcButtonRange.left * s.x + p.x),
+				(long)(m_rcButtonRange.top * s.y + p.y),
+				(long)(m_rcButtonRange.right * s.x + p.x),
+				(long)(m_rcButtonRange.bottom * s.y + p.y)
 	};
 }

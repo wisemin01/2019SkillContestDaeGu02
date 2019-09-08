@@ -1,8 +1,2 @@
-﻿  Soldier.cpp
-C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Soldier.cpp(78): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
-  Stage1.cpp
-C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Soldier.cpp(78,59): warning C4238:  비표준 확장이 사용됨: 클래스 rvalue를 lvalue로 사용했습니다.
-C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Stage1.cpp(61,75): warning C4244:  '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Stage1.cpp(61,66): warning C4244:  '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  StageSelectMap.cpp
   Project_2010.vcxproj -> C:\Users\Admin\Desktop\Projects\2019SkillContestDaeGu02\Debug\Project.exe

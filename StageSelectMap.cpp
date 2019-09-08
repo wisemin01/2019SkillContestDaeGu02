@@ -55,6 +55,17 @@ void StageSelectMap::Initialize()
 		pGameStart->transform->Position = Vector3(1068, 582, 0);
 		pGameStart->AddComponent<Button>()->OnButtonClick += CreateListener(EmptyEventArg, OnStartButtonClick);
 
+		Actor* pShop = ACTOR.Create(TagType::Button, true, true, 1);
+		pShop->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("shop-button")));
+		pShop->renderer->Change(UnitStateType::Idle);
+		pShop->transform->Position = Vector3(1115, 270, 0);
+		pShop->AddComponent<Button>()->OnButtonClick += CreateListener(EmptyEventArg, OnShopButtonClick);
+
+		Actor* pGoldView = ACTOR.Create(TagType::Button, true, true, 1);
+		pGoldView->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("coin-background")));
+		pGoldView->renderer->Change(UnitStateType::Idle);
+		pGoldView->transform->Position = Vector3(1115, 160, 0);
+		
 		Actor* pLevelView = ACTOR.Create(TagType::Button, true, true, 1);
 		pLevelView->renderer->AddAnimation(1, new Animation(Sprite::Find("level-button")->Get(0)));
 		pLevelView->renderer->AddAnimation(2, new Animation(Sprite::Find("level-button")->Get(1)));
@@ -72,6 +83,8 @@ void StageSelectMap::Initialize()
 		m_pButtonBase = ACTOR.Create(TagType::Background);
 
 		m_pButtonBase->AddChlid(pGameStart);
+		m_pButtonBase->AddChlid(pShop);
+		m_pButtonBase->AddChlid(pGoldView);
 		m_pButtonBase->AddChlid(pLevelView);
 		m_pButtonBase->AddChlid(pTimeView);
 	}
@@ -111,7 +124,7 @@ void StageSelectMap::Update()
 	{
 		if (Input::GetKeyDown(KeyCode::LeftMouse))
 		{
-			m_bIsStart = true;
+			m_bIsStart = false;
 		}
 
 		return;
@@ -178,4 +191,9 @@ void StageSelectMap::OnStartButtonClick(const EmptyEventArg& e)
 {
 	m_bIsEndSelect = true;
 	m_pBlackPanel->GetComponent<Fade<Color>>()->Set(Color(1, 1, 1, 1), FadeTarget::Renderer_Alpha, 0.45f);
+}
+
+void StageSelectMap::OnShopButtonClick(const EmptyEventArg& e)
+{
+
 }
