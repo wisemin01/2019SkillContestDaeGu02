@@ -7,19 +7,19 @@
 
 void TextBoxTyping::Enter()
 {
-	m_pFSM->Owner->m_sNowContext.clear();
+	Base->m_sNowContext.clear();
 
-	m_sFinalContext = m_pFSM->Owner->m_queueContexts.front();
-	m_pFSM->Owner->m_queueContexts.pop();
+	m_sFinalContext = Base->m_queueContexts.front();
+	Base->m_queueContexts.pop();
 
 	m_iMaxIndex = m_sFinalContext.size() + 2;
 	m_iCurrentIndex = 0;
 	m_bIsWaiting = false;
 	m_pWaitTimer = nullptr;
 
-	m_Frame.Set(m_iCurrentIndex, m_iMaxIndex, m_pFSM->Owner->m_fTypingSpeed);
+	m_Frame.Set(m_iCurrentIndex, m_iMaxIndex, Base->m_fTypingSpeed);
 
-	m_pPanelBase = m_pFSM->Owner->transform->GetParent()->Base;
+	m_pPanelBase = Base->transform->GetParent()->Base;
 }
 
 void TextBoxTyping::Stay()
@@ -48,15 +48,15 @@ void TextBoxTyping::Stay()
 
 	if (m_Frame.Update())
 	{
-		m_pFSM->Owner->m_sNowContext = m_sFinalContext.substr(0, m_Frame.CurrentFrame);
-		m_pFSM->Owner->m_pTextRenderer->SetContext(m_pFSM->Owner->m_sNowContext);
+		Base->m_sNowContext = m_sFinalContext.substr(0, m_Frame.CurrentFrame);
+		Base->m_pTextRenderer->SetContext(Base->m_sNowContext);
 
-		m_pFSM->Owner->m_pTypingSoundSource->DuplicatePlay();
+		Base->m_pTypingSoundSource->DuplicatePlay();
 
 		if (m_Frame.IsLastFrame == true)
 		{
 			m_bIsWaiting = true;
-			m_pWaitTimer = Timer::Create(m_pFSM->Owner->m_fTypingEndWaitTime);
+			m_pWaitTimer = Timer::Create(Base->m_fTypingEndWaitTime);
 		}
 	}
 }
@@ -64,7 +64,7 @@ void TextBoxTyping::Stay()
 void TextBoxTyping::Exit()
 {
 	m_sFinalContext.clear();
-	m_pFSM->Owner->m_sNowContext.clear();
+	Base->m_sNowContext.clear();
 
 	Timer::Destroy(m_pWaitTimer);
 	m_pWaitTimer = nullptr;

@@ -64,6 +64,8 @@ Actor* ActorManager::FindActor(Tag tag)
 		if (iter->m_Tag == tag)
 			return iter;
 	}
+
+	return nullptr;
 }
 
 void ActorManager::Update()

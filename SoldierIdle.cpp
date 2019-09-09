@@ -11,7 +11,10 @@ void SoldierIdle::Enter()
 
 void SoldierIdle::Stay()
 {
-
+	if (Base->m_bIsDetectedOnFrame == true)
+	{
+		ChangeState(UnitStateType::Attack);
+	}
 }
 
 void SoldierIdle::Exit()

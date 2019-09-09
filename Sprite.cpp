@@ -8,6 +8,8 @@ Sprite::~Sprite()
 
 void Sprite::Load(const std::string& path, int count)
 {
+	Log(path);
+
 	D3DXCreateTextureFromFileExA(g_pDevice, path.c_str(),
 		D3DX_DEFAULT_NONPOW2, D3DX_DEFAULT_NONPOW2,
 		0, 0, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, 

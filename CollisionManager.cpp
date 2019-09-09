@@ -29,6 +29,12 @@ void CollisionManager::Update()
 			auto& C1 = *col1;
 			auto& C2 = *col2;
 
+			if (C1->Base->IsLive == false
+				|| C2->Base->IsLive == false)
+			{
+				continue;
+			}
+
 #if (COLLISION_CALCULATE_TYPE & COLLISION_CALCULATETYPE_CIRCLE)
 			if (Circle::Intersect(C1->Range, C2->Range))
 			{

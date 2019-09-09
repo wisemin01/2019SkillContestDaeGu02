@@ -35,7 +35,6 @@ Sprite* ResourceManager::InsertSprite(const std::string& key, const std::string&
 	Sprite* Spr = ( count == 0 ) ? new Sprite() : new MultiSprite();
 
 	Spr->Load( "./Resource/" + path, count );
-	Log(path);
 
 	m_mapSprites.insert( std::make_pair( key, Spr ) );
 

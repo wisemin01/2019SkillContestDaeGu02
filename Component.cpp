@@ -5,7 +5,10 @@
 
 void Component::Destroy(Actor* target)
 {
-	target->IsLive = false;
+	if (target != nullptr) 
+	{
+		target->IsLive = false;
+	}
 }
 
 Transform* Component::GetTransform() const

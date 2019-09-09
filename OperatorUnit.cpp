@@ -25,7 +25,7 @@ void OperatorUnit::Initialize()
 
 	OnTalkListen = CreateListener(OutputString, Say);
 
-	MainPlayerController->OnTalk += OnTalkListen;
+	PlayerController::GetMain()->OnTalk += OnTalkListen;
 }
 
 void OperatorUnit::Update()

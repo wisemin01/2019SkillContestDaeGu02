@@ -114,83 +114,14 @@
     <Filter Include="01. ENGINE\03. BaseLayer Objects\07. SoundSource">
       <UniqueIdentifier>{2301b9c0-c602-428d-ad82-5b2bb6285c4c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly">
-      <UniqueIdentifier>{f9f24563-c915-4608-a3c9-a14a64c54ee3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\Soldier">
-      <UniqueIdentifier>{b1ed7da0-dd22-4538-be19-26984ff49f57}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\PlayerContoller">
-      <UniqueIdentifier>{d78efba0-c2ee-4b21-8c98-1ed6603c8d28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly">
-      <UniqueIdentifier>{d112ffda-f85e-4571-8c80-4663ddab5c34}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\Wobble">
-      <UniqueIdentifier>{52629f1c-e1de-491b-bd6a-b6b3a82ba9ba}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. INGAME\01. Scenes\02. Stage1">
       <UniqueIdentifier>{2fe7c70b-846a-4468-8ef4-849f0e0fb7bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\OperatorUnit">
-      <UniqueIdentifier>{4d0bee7f-0472-43e8-8d92-cb18d6d134c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States">
-      <UniqueIdentifier>{797240cf-2556-4339-92ee-983836d5b7de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\Soldier\States">
-      <UniqueIdentifier>{cbbbdb95-ad71-4984-939f-f79f033b9a91}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\Soldier\States\01. Idle">
-      <UniqueIdentifier>{96a8e6ce-4a33-47af-83d3-c20e4e55e4a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\Soldier\States\02. Move">
-      <UniqueIdentifier>{550e3300-19d6-44d8-a81a-4d577ec6a1cd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\01. Idle">
-      <UniqueIdentifier>{e92c876c-6f4e-4370-bcbb-812be6c7ab5d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\02. Talk">
-      <UniqueIdentifier>{b85655c2-a1ad-4304-bb85-5bcd248dd08c}</UniqueIdentifier>
     </Filter>
     <Filter Include="01. ENGINE\03. BaseLayer Objects\08. EventHandler">
       <UniqueIdentifier>{f7935d1f-4171-4550-a9d2-6b79e83311ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\SelectRange">
-      <UniqueIdentifier>{d0514bc8-7149-4a51-9cf7-1d357564c964}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\TextBox">
-      <UniqueIdentifier>{4c9e140d-68d8-4252-9e7f-16659d2ed838}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01. ENGINE\03. BaseLayer Objects\09. Font">
       <UniqueIdentifier>{a134cbee-2542-4d72-9fe2-782f5bf5dc44}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\TextBox\States">
-      <UniqueIdentifier>{ace55cfb-ab2f-42cd-99e3-98e30cd1ca57}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\TextBox\States\01. None">
-      <UniqueIdentifier>{8975d495-9747-4d6d-96d7-ad34df733ba4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\TextBox\States\02. Typing">
-      <UniqueIdentifier>{bd83f717-2e91-4556-97eb-d73bd40a2282}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States">
-      <UniqueIdentifier>{e2580546-1764-46d4-94cf-c6bc5fac477d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\01. Tutorial">
-      <UniqueIdentifier>{a23c48a8-6706-4a6e-ab86-fce03879f908}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\02. Stage1">
-      <UniqueIdentifier>{93cb1094-31a4-4e20-80fe-1ba9dff53a22}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\03. Stage2">
-      <UniqueIdentifier>{7f12b489-be64-4320-85ca-eb47a6f29c58}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\02. Object to use indirectly\Fade">
-      <UniqueIdentifier>{627c4cb4-943c-4d50-ab5e-f3c38290e4ea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\Button">
-      <UniqueIdentifier>{facdb8c1-2fea-4705-baf9-b10e67d40461}</UniqueIdentifier>
     </Filter>
     <Filter Include="01. ENGINE\04. Components\Helper Components">
       <UniqueIdentifier>{da76cf07-3204-4927-a741-5959d42386eb}</UniqueIdentifier>
@@ -207,14 +138,110 @@
     <Filter Include="01. ENGINE\04. Components\Helper Components\TextRenderer">
       <UniqueIdentifier>{6c4a95af-fa60-4147-9fac-a1d638fdb0b1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. INGAME\02. Components\01. Object to use directly\StageSelectMap">
-      <UniqueIdentifier>{6cb7f578-41c0-409a-88d2-7872582f69fa}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. INGAME\01. Scenes\03. Stage2">
       <UniqueIdentifier>{35c62654-54c5-46d0-8995-3d9f98759652}</UniqueIdentifier>
     </Filter>
     <Filter Include="02. INGAME\01. Scenes\03. Stage3">
       <UniqueIdentifier>{c62f50d2-f330-4484-a103-9f48cf090b71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Fade">
+      <UniqueIdentifier>{627c4cb4-943c-4d50-ab5e-f3c38290e4ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Wobble">
+      <UniqueIdentifier>{52629f1c-e1de-491b-bd6a-b6b3a82ba9ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\TextBox">
+      <UniqueIdentifier>{4c9e140d-68d8-4252-9e7f-16659d2ed838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\TextBox\States">
+      <UniqueIdentifier>{ace55cfb-ab2f-42cd-99e3-98e30cd1ca57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\TextBox\States\01. None">
+      <UniqueIdentifier>{8975d495-9747-4d6d-96d7-ad34df733ba4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\TextBox\States\02. Typing">
+      <UniqueIdentifier>{bd83f717-2e91-4556-97eb-d73bd40a2282}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Button">
+      <UniqueIdentifier>{facdb8c1-2fea-4705-baf9-b10e67d40461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Enemy">
+      <UniqueIdentifier>{254a4046-72da-44bb-aa69-048ee6db6133}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\EnemyController">
+      <UniqueIdentifier>{1cb9a064-e972-4fa8-bc7e-a7963b29dd86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Bullet">
+      <UniqueIdentifier>{a97d9f95-2b08-4d5f-913a-be0fbad66711}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\UnitRadar">
+      <UniqueIdentifier>{315f967c-80b4-4c47-bd39-a208b1aaa32f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\OperatorUnit">
+      <UniqueIdentifier>{4d0bee7f-0472-43e8-8d92-cb18d6d134c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\OperatorUnit\States">
+      <UniqueIdentifier>{797240cf-2556-4339-92ee-983836d5b7de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\OperatorUnit\States\01. Idle">
+      <UniqueIdentifier>{e92c876c-6f4e-4370-bcbb-812be6c7ab5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\OperatorUnit\States\02. Talk">
+      <UniqueIdentifier>{b85655c2-a1ad-4304-bb85-5bcd248dd08c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\PlayerContoller">
+      <UniqueIdentifier>{d78efba0-c2ee-4b21-8c98-1ed6603c8d28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\PlayerContoller\States">
+      <UniqueIdentifier>{e2580546-1764-46d4-94cf-c6bc5fac477d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\PlayerContoller\States\01. Tutorial">
+      <UniqueIdentifier>{a23c48a8-6706-4a6e-ab86-fce03879f908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\PlayerContoller\States\02. Stage1">
+      <UniqueIdentifier>{93cb1094-31a4-4e20-80fe-1ba9dff53a22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\PlayerContoller\States\03. Stage2">
+      <UniqueIdentifier>{7f12b489-be64-4320-85ca-eb47a6f29c58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\SelectRange">
+      <UniqueIdentifier>{d0514bc8-7149-4a51-9cf7-1d357564c964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Soldier">
+      <UniqueIdentifier>{b1ed7da0-dd22-4538-be19-26984ff49f57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Soldier\States">
+      <UniqueIdentifier>{cbbbdb95-ad71-4984-939f-f79f033b9a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Soldier\States\01. Idle">
+      <UniqueIdentifier>{96a8e6ce-4a33-47af-83d3-c20e4e55e4a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Soldier\States\02. Move">
+      <UniqueIdentifier>{550e3300-19d6-44d8-a81a-4d577ec6a1cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Soldier\States\03. Attack">
+      <UniqueIdentifier>{e60f4aec-774b-4de0-887a-e2e31b744ac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\StageSelectMap">
+      <UniqueIdentifier>{6cb7f578-41c0-409a-88d2-7872582f69fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Enemy\States">
+      <UniqueIdentifier>{0847ee01-f9e0-4167-9f30-cae295ffbb07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Enemy\States\01. Idle">
+      <UniqueIdentifier>{c2d5d1a6-4641-409c-9721-ad93365d9d47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Enemy\States\02. Move">
+      <UniqueIdentifier>{d8922525-c1fb-480e-b015-cff47109c506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Enemy\States\03. Attack">
+      <UniqueIdentifier>{20f2a864-655d-4dac-8e1e-1d21e94ba30f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\HPModule">
+      <UniqueIdentifier>{13d6a36b-c5d9-47ac-bb5a-ca81dd251641}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\Trigger">
+      <UniqueIdentifier>{8d4024bc-ef05-418c-b9a4-2c60a858c546}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -342,7 +369,7 @@
       <Filter>01. ENGINE\02. Managers\05. Input Manager</Filter>
     </ClCompile>
     <ClCompile Include="PlayerController.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller</Filter>
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>01. ENGINE\02. Managers\06. Collision Manager</Filter>
@@ -365,11 +392,8 @@
     <ClCompile Include="DXUT\Optional\SDKwavefile.cpp">
       <Filter>01. ENGINE\06. Other\DXUT</Filter>
     </ClCompile>
-    <ClCompile Include="Soldier.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier</Filter>
-    </ClCompile>
     <ClCompile Include="Wobble.cpp">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\Wobble</Filter>
+      <Filter>02. INGAME\02. Components\Wobble</Filter>
     </ClCompile>
     <ClCompile Include="Stage1.cpp">
       <Filter>02. INGAME\01. Scenes\02. Stage1</Filter>
@@ -378,31 +402,31 @@
       <Filter>01. ENGINE\04. Components\Helper Components\FSM %28Finite State Machine%29\BaseState</Filter>
     </ClCompile>
     <ClCompile Include="SoldierIdle.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\01. Idle</Filter>
+      <Filter>02. INGAME\02. Components\Soldier\States\01. Idle</Filter>
     </ClCompile>
     <ClCompile Include="SoldierMove.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\02. Move</Filter>
+      <Filter>02. INGAME\02. Components\Soldier\States\02. Move</Filter>
     </ClCompile>
     <ClCompile Include="OperatorUnit.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit</Filter>
+      <Filter>02. INGAME\02. Components\OperatorUnit</Filter>
     </ClCompile>
     <ClCompile Include="OperatorIdle.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\01. Idle</Filter>
+      <Filter>02. INGAME\02. Components\OperatorUnit\States\01. Idle</Filter>
     </ClCompile>
     <ClCompile Include="OperatorTalk.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\02. Talk</Filter>
+      <Filter>02. INGAME\02. Components\OperatorUnit\States\02. Talk</Filter>
     </ClCompile>
     <ClCompile Include="EventHandler.cpp">
       <Filter>01. ENGINE\03. BaseLayer Objects\08. EventHandler</Filter>
     </ClCompile>
     <ClCompile Include="SelectRange.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\SelectRange</Filter>
+      <Filter>02. INGAME\02. Components\SelectRange</Filter>
     </ClCompile>
     <ClCompile Include="LineRenderer.cpp">
       <Filter>01. ENGINE\04. Components\Helper Components\LineRenderer</Filter>
     </ClCompile>
     <ClCompile Include="TextBox.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox</Filter>
+      <Filter>02. INGAME\02. Components\TextBox</Filter>
     </ClCompile>
     <ClCompile Include="TextRenderer.cpp">
       <Filter>01. ENGINE\04. Components\Helper Components\TextRenderer</Filter>
@@ -411,28 +435,64 @@
       <Filter>01. ENGINE\03. BaseLayer Objects\09. Font</Filter>
     </ClCompile>
     <ClCompile Include="TextBoxNone.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox\States\01. None</Filter>
+      <Filter>02. INGAME\02. Components\TextBox\States\01. None</Filter>
     </ClCompile>
     <ClCompile Include="TextBoxTyping.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox\States\02. Typing</Filter>
+      <Filter>02. INGAME\02. Components\TextBox\States\02. Typing</Filter>
     </ClCompile>
     <ClCompile Include="PlayerControllerTutorial.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\01. Tutorial</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller\States\01. Tutorial</Filter>
     </ClCompile>
     <ClCompile Include="PlayerControllerStage1.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\02. Stage1</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller\States\02. Stage1</Filter>
     </ClCompile>
     <ClCompile Include="Button.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\Button</Filter>
+      <Filter>02. INGAME\02. Components\Button</Filter>
     </ClCompile>
     <ClCompile Include="StageSelectMap.cpp">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\StageSelectMap</Filter>
+      <Filter>02. INGAME\02. Components\StageSelectMap</Filter>
     </ClCompile>
     <ClCompile Include="Stage2.cpp">
       <Filter>02. INGAME\01. Scenes\03. Stage2</Filter>
     </ClCompile>
     <ClCompile Include="Stage3.cpp">
       <Filter>02. INGAME\01. Scenes\03. Stage3</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>02. INGAME\02. Components\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyController.cpp">
+      <Filter>02. INGAME\02. Components\EnemyController</Filter>
+    </ClCompile>
+    <ClCompile Include="SoldierAttack.cpp">
+      <Filter>02. INGAME\02. Components\Soldier\States\03. Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitRadar.cpp">
+      <Filter>02. INGAME\02. Components\UnitRadar</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>02. INGAME\02. Components\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyAttack.cpp">
+      <Filter>02. INGAME\02. Components\Enemy\States\03. Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyIdle.cpp">
+      <Filter>02. INGAME\02. Components\Enemy\States\01. Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyMove.cpp">
+      <Filter>02. INGAME\02. Components\Enemy\States\02. Move</Filter>
+    </ClCompile>
+    <ClCompile Include="Soldier.cpp">
+      <Filter>02. INGAME\02. Components\Soldier</Filter>
+    </ClCompile>
+    <ClCompile Include="HPModule.cpp">
+      <Filter>02. INGAME\02. Components\HPModule</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerControllerTutorial.Quests.cpp">
+      <Filter>02. INGAME\02. Components\PlayerContoller\States\01. Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="Trigger.cpp">
+      <Filter>02. INGAME\02. Components\Trigger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -518,7 +578,7 @@
       <Filter>01. ENGINE\06. Other\KeyCode</Filter>
     </ClInclude>
     <ClInclude Include="PlayerController.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller</Filter>
     </ClInclude>
     <ClInclude Include="Component.hpp">
       <Filter>01. ENGINE\04. Components\Component</Filter>
@@ -545,10 +605,10 @@
       <Filter>01. ENGINE\06. Other\DXUT</Filter>
     </ClInclude>
     <ClInclude Include="Soldier.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier</Filter>
+      <Filter>02. INGAME\02. Components\Soldier</Filter>
     </ClInclude>
     <ClInclude Include="Wobble.h">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\Wobble</Filter>
+      <Filter>02. INGAME\02. Components\Wobble</Filter>
     </ClInclude>
     <ClInclude Include="Stage1.h">
       <Filter>02. INGAME\01. Scenes\02. Stage1</Filter>
@@ -560,34 +620,34 @@
       <Filter>01. ENGINE\04. Components\Helper Components\FSM %28Finite State Machine%29\BaseState</Filter>
     </ClInclude>
     <ClInclude Include="SoldierIdle.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\01. Idle</Filter>
+      <Filter>02. INGAME\02. Components\Soldier\States\01. Idle</Filter>
     </ClInclude>
     <ClInclude Include="FSM.hpp">
       <Filter>01. ENGINE\04. Components\Helper Components\FSM %28Finite State Machine%29</Filter>
     </ClInclude>
     <ClInclude Include="SoldierMove.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\Soldier\States\02. Move</Filter>
+      <Filter>02. INGAME\02. Components\Soldier\States\02. Move</Filter>
     </ClInclude>
     <ClInclude Include="OperatorUnit.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit</Filter>
+      <Filter>02. INGAME\02. Components\OperatorUnit</Filter>
     </ClInclude>
     <ClInclude Include="OperatorIdle.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\01. Idle</Filter>
+      <Filter>02. INGAME\02. Components\OperatorUnit\States\01. Idle</Filter>
     </ClInclude>
     <ClInclude Include="OperatorTalk.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\OperatorUnit\States\02. Talk</Filter>
+      <Filter>02. INGAME\02. Components\OperatorUnit\States\02. Talk</Filter>
     </ClInclude>
     <ClInclude Include="EventHandler.h">
       <Filter>01. ENGINE\03. BaseLayer Objects\08. EventHandler</Filter>
     </ClInclude>
     <ClInclude Include="SelectRange.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\SelectRange</Filter>
+      <Filter>02. INGAME\02. Components\SelectRange</Filter>
     </ClInclude>
     <ClInclude Include="LineRenderer.h">
       <Filter>01. ENGINE\04. Components\Helper Components\LineRenderer</Filter>
     </ClInclude>
     <ClInclude Include="TextBox.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox</Filter>
+      <Filter>02. INGAME\02. Components\TextBox</Filter>
     </ClInclude>
     <ClInclude Include="TextRenderer.h">
       <Filter>01. ENGINE\04. Components\Helper Components\TextRenderer</Filter>
@@ -596,37 +656,67 @@
       <Filter>01. ENGINE\03. BaseLayer Objects\09. Font</Filter>
     </ClInclude>
     <ClInclude Include="TextBoxNone.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox\States\01. None</Filter>
+      <Filter>02. INGAME\02. Components\TextBox\States\01. None</Filter>
     </ClInclude>
     <ClInclude Include="TextBoxTyping.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\TextBox\States\02. Typing</Filter>
+      <Filter>02. INGAME\02. Components\TextBox\States\02. Typing</Filter>
     </ClInclude>
     <ClInclude Include="TypeDefines.h">
       <Filter>02. INGAME\03. Types</Filter>
     </ClInclude>
     <ClInclude Include="PlayerControllerTutorial.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\01. Tutorial</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller\States\01. Tutorial</Filter>
     </ClInclude>
     <ClInclude Include="PlayerControllerStage1.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\PlayerContoller\States\02. Stage1</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller\States\02. Stage1</Filter>
     </ClInclude>
     <ClInclude Include="Fade.h">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\Fade</Filter>
+      <Filter>02. INGAME\02. Components\Fade</Filter>
     </ClInclude>
     <ClInclude Include="Fade.hpp">
-      <Filter>02. INGAME\02. Components\02. Object to use indirectly\Fade</Filter>
+      <Filter>02. INGAME\02. Components\Fade</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\Button</Filter>
+      <Filter>02. INGAME\02. Components\Button</Filter>
     </ClInclude>
     <ClInclude Include="StageSelectMap.h">
-      <Filter>02. INGAME\02. Components\01. Object to use directly\StageSelectMap</Filter>
+      <Filter>02. INGAME\02. Components\StageSelectMap</Filter>
     </ClInclude>
     <ClInclude Include="Stage2.h">
       <Filter>02. INGAME\01. Scenes\03. Stage2</Filter>
     </ClInclude>
     <ClInclude Include="Stage3.h">
       <Filter>02. INGAME\01. Scenes\03. Stage3</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>02. INGAME\02. Components\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyController.h">
+      <Filter>02. INGAME\02. Components\EnemyController</Filter>
+    </ClInclude>
+    <ClInclude Include="SoldierAttack.h">
+      <Filter>02. INGAME\02. Components\Soldier\States\03. Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitRadar.h">
+      <Filter>02. INGAME\02. Components\UnitRadar</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>02. INGAME\02. Components\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyAttack.h">
+      <Filter>02. INGAME\02. Components\Enemy\States\03. Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyIdle.h">
+      <Filter>02. INGAME\02. Components\Enemy\States\01. Idle</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyMove.h">
+      <Filter>02. INGAME\02. Components\Enemy\States\02. Move</Filter>
+    </ClInclude>
+    <ClInclude Include="HPModule.h">
+      <Filter>02. INGAME\02. Components\HPModule</Filter>
+    </ClInclude>
+    <ClInclude Include="Trigger.h">
+      <Filter>02. INGAME\02. Components\Trigger</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

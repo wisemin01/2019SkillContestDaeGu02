@@ -24,19 +24,22 @@ void Rigidbody::Release()
 
 void Rigidbody::OnCollision(Collider* other)
 {
-	if (m_bIsPhysicalTreatment == true)
-	{
-		Vector3 EndPosition = transform->Position;
-		Vector3 TargetPosition = other->transform->Position;
+	if (other->IsTrigger == true)
+		return;
 
-		Vector3 Direction = EndPosition - TargetPosition;
+	if (m_bIsPhysicalTreatment == false)
+		return;
 
-		float Length = Direction.Length();
+	Vector3 EndPosition = transform->Position;
+	Vector3 TargetPosition = other->transform->Position;
 
-		Direction.Normalize();
+	Vector3 Direction = EndPosition - TargetPosition;
 
-		AddForce(Direction * Length * Time::Delta());
-	}
+	float Length = Direction.Length();
+
+	Direction.Normalize();
+
+	AddForce(Direction * Length * Time::Delta());
 }
 
 void Rigidbody::AddForce(const Vector3& force)

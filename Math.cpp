@@ -262,6 +262,11 @@ Vector2 Vector2::CCW(const Vector2& v1, const Vector2& v2)
 	return v;
 }
 
+float Vector3::ToRotationValue()
+{
+	return atan2f(y, x);
+}
+
 Vector3 Vector3::ToRadian()
 {
 	Vector3 ret;

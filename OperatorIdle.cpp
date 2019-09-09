@@ -12,7 +12,7 @@ void OperatorIdle::Enter()
 
 void OperatorIdle::Stay()
 {
-	if (m_pFSM->Owner->m_pTextBox->GetCurrentState() == TypingType::Typing)
+	if (Base->m_pTextBox->GetCurrentState() == TypingType::Typing)
 	{
 		ChangeState(UnitStateType::Talk);
 	}

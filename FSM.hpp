@@ -58,6 +58,15 @@ inline void FSM<OWNER>::Update()
 }
 
 template<class OWNER>
+inline void FSM<OWNER>::LateUpdate()
+{
+	if (m_pCurrentState)
+	{
+		m_pCurrentState->LateStay();
+	}
+}
+
+template<class OWNER>
 inline void FSM<OWNER>::Release()
 {
 	if (m_pCurrentState)

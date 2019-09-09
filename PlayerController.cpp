@@ -32,10 +32,7 @@ void PlayerController::Initialize()
 	m_pFSM = AddComponent<FSM<PlayerController>>();
 	m_pFSM->SetOwner(this);
 
-	// Did the player finish the tutorial
-	static bool bIsFihishTutorial = false;
-
-	if (bIsFihishTutorial == true)
+	if (g_bIsEndListenTutorial == true)
 	{
 		m_pFSM->AddState(PlayerControllerType::Stage1, new PlayerControllerStage1());
 
@@ -46,7 +43,6 @@ void PlayerController::Initialize()
 		m_pFSM->AddState(PlayerControllerType::Tutorial, new PlayerControllerTutorial());
 
 		m_pFSM->ChangeState(PlayerControllerType::Tutorial);
-		bIsFihishTutorial = true;
 	}
 }
 
@@ -54,12 +50,18 @@ void PlayerController::Update()
 {
 	if (Input::GetKeyPress(KeyCode::P))
 	{
-		// 3배모드
+		// 3배 모드
 		Time::SetTimeScale(3.0f);
 	}
 	else
 	{
 		Time::SetTimeScale(1.0f);
+	}
+
+	if (Input::GetKeyPress(KeyCode::Space))
+	{
+		Actor* pFirstSoldier = ACTOR.FindActor(TagType::Player);
+		transform->Position = Vector3::Lerp(transform->Position, pFirstSoldier->transform->Position, 0.15f);
 	}
 
 	CameraMoveInput();

@@ -45,8 +45,8 @@ void Collider::Update()
 
 void Collider::Release()
 {
+	COLLISION.Unregister(this);
+
 	if (Base->collider == this)
 		Base->collider = nullptr;
-
-	COLLISION.Unregister(this);
 }

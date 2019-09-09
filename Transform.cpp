@@ -19,6 +19,12 @@ void Transform::Initialize()
 
 void Transform::Update()
 {
+	if (m_pParentTransform &&
+		m_pParentTransform->Base->IsLive == false)
+	{
+		m_pParentTransform = nullptr;
+		Destroy(Base);
+	}
 }
 
 void Transform::Release()

@@ -55,6 +55,8 @@ struct Vector3
 	Vector3(CONST D3DXVECTOR3& v) : D3DXVECTOR3(v.x, v.y, v.z) {}
 	Vector3(FLOAT x, FLOAT y, FLOAT z) : D3DXVECTOR3(x, y, z) {}
 
+	float ToRotationValue();
+
 	Vector3 ToRadian();
 	Vector3 ToDegree();
 	void Normalize();

@@ -14,12 +14,19 @@ private:
 	RECT m_rcRange = { 0 };
 #endif
 
+	bool m_bIsTrigger = false;
+
 public:
 
 	// Component을(를) 통해 상속됨
 	virtual void Initialize() override;
 	virtual void Update() override;
 	virtual void Release() override;
+
+	bool GetIsTrigger() { return m_bIsTrigger; }
+	void SetIsTrigger(bool value) { m_bIsTrigger = value; }
+
+	Tag GetTag() { return Base->m_Tag; }
 
 #if (COLLISION_CALCULATE_TYPE & COLLISION_CALCULATETYPE_CIRCLE)
 
@@ -50,5 +57,8 @@ public:
 	PropertyGS(GetRect, SetRect) RECT Rect;
 	PropertyG(GetWorldRange) RECT Range;
 #endif
+
+	PropertyGS(GetIsTrigger, SetIsTrigger) bool IsTrigger;
+	PropertyG(GetTag) Tag Tag;
 };
 

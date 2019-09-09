@@ -14,7 +14,7 @@ void OperatorTalk::Enter()
 
 void OperatorTalk::Stay()
 {
-	if (m_pFSM->Owner->m_pTextBox->GetCurrentState() == TypingType::None)
+	if (Base->m_pTextBox->GetCurrentState() == TypingType::None)
 	{
 		ChangeState(UnitStateType::Idle);
 	}

@@ -124,7 +124,7 @@ void StageSelectMap::Update()
 	{
 		if (Input::GetKeyDown(KeyCode::LeftMouse))
 		{
-			m_bIsStart = false;
+			m_bIsStart = true;
 		}
 
 		return;

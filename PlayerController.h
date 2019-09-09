@@ -62,9 +62,15 @@ public:
 
 	void Say(const OutputString& context);
 
-public:
-
+private:
 	inline static PlayerController* g_pMainPlayerController = nullptr;
-};
+	inline static bool g_bIsEndListenTutorial = false;
+	inline static int g_iPlayerUnitCount = 0;
 
-#define MainPlayerController PlayerController::g_pMainPlayerController
+public:
+	static PlayerController* GetMain() { return g_pMainPlayerController; }
+	static int GetPlayerUnitCount() { return g_iPlayerUnitCount; }
+
+	static void AddUnit() { g_iPlayerUnitCount++; }
+	static void RemoveUnit() { g_iPlayerUnitCount--; }
+};
