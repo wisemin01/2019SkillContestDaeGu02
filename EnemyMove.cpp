@@ -31,6 +31,18 @@ void EnemyMove::Stay()
 
 	Direction.Normalize();
 
+	// 스프라이트 방향 뒤집기
+	if (Direction.x > 0)
+	{
+		Vector3 v = Base->transform->Scale;
+		Base->transform->Scale = Vector3(fabs(v.x), v.y, v.y);
+	}
+	else if (Direction.x < 0)
+	{
+		Vector3 v = Base->transform->Scale;
+		Base->transform->Scale = Vector3(-fabs(v.x), v.y, v.y);
+	}
+
 	m_pFSM->rigidbody->AddForce(Direction * Base->m_fSpeed * Time::Delta());
 }
 

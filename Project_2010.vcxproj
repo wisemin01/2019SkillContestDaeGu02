@@ -407,6 +407,7 @@
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Frame.cpp" />
+    <ClCompile Include="GuidedBullet.cpp" />
     <ClCompile Include="HPModule.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="IntroScene.cpp" />
@@ -474,6 +475,7 @@
     <ClInclude Include="Frame.h" />
     <ClInclude Include="FSM.h" />
     <ClInclude Include="FSM.hpp" />
+    <ClInclude Include="GuidedBullet.h" />
     <ClInclude Include="HPModule.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="IntroScene.h" />

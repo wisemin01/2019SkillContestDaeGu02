@@ -40,6 +40,8 @@ void PlayerControllerTutorial::Enter()
 	OnMove = CreateListener(Vector3, OnMoveCommand);
 	Base->OnRightClick += OnMove;
 
+	Base->SetCameraRange(2000, 1125);
+
 	CreateObjects();
 	CreateTutorialUI();
 }
@@ -54,8 +56,7 @@ void PlayerControllerTutorial::Stay()
 
 	if (Input::GetKeyDown(KeyCode::Space))
 	{
-		Camera::MainCamera()->SetShakePower(30.0f);
-		Camera::MainCamera()->Shake(0.5f);
+		Camera::MainCamera()->Shake(0.5f, 30.0f);
 	}
 
 	OnAttackCommand();
@@ -170,6 +171,8 @@ void PlayerControllerTutorial::OnAttackCommand()
 
 				Say_Tutorial_Text03(false);
 			}
+
+			return;
 		}
 
 		if (EnemyController::GetEnemyUnitCount() == 0)
@@ -183,6 +186,8 @@ void PlayerControllerTutorial::OnAttackCommand()
 
 				Say_Tutorial_Text03(true);
 			}
+
+			return;
 		}
 	}
 }
@@ -330,7 +335,7 @@ void PlayerControllerTutorial::CreateObjects()
 
 	{
 		Actor* pBackgroundWater = ACTOR.Create(TagType::Background, 0);
-		pBackgroundWater->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Stage1Background")->Get(0)));
+		pBackgroundWater->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("stage1-background-1")->Get(0)));
 		pBackgroundWater->renderer->Change(UnitStateType::Idle);
 		pBackgroundWater->transform->Position = Vector3(1000, 562.5, 0);
 
@@ -349,7 +354,7 @@ void PlayerControllerTutorial::CreateObjects()
 		}
 
 		Actor* pBackgroundDot = ACTOR.Create(TagType::Background, 2);
-		pBackgroundDot->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Stage1Background")->Get(1)));
+		pBackgroundDot->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("stage1-background-1")->Get(1)));
 		pBackgroundDot->renderer->Change(UnitStateType::Idle);
 		pBackgroundDot->transform->Position = Vector3(1000, 562.5, 0);
 		pBackgroundDot->AddComponent<Wobble>()->Set(WobbleType::Width, 3, 5);
@@ -364,7 +369,6 @@ void PlayerControllerTutorial::CreateObjects()
 		pStone01->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Stage1Stone")->Get(0)));
 		pStone01->renderer->Change(UnitStateType::Idle);
 		pStone01->transform->Position = Vector3(1000, 158.5, 0);
-		pStone01->AddComponent<Collider>()->SetRange(100, 100);
 
 		Actor* pStone02 = ACTOR.Create(TagType::Obstacle, 3);
 		pStone02->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Stage1Stone")->Get(1)));
@@ -390,12 +394,12 @@ void PlayerControllerTutorial::CreateObjects()
 	// ================================================================
 
 	{
-		PlayerController::GetMain()->SpawnSoldier(Vector3(300, 300, 0), SoldierType::Ship);
-		PlayerController::GetMain()->SpawnSoldier(Vector3(450, 300, 0), SoldierType::Ship);
-		PlayerController::GetMain()->SpawnSoldier(Vector3(600, 300, 0), SoldierType::Ship);
+		PlayerController::GetMain()->SpawnSoldier(Vector3(400, 400, 0), SoldierType::Ship);
+		PlayerController::GetMain()->SpawnSoldier(Vector3(600, 600, 0), SoldierType::Ship);
+		PlayerController::GetMain()->SpawnSoldier(Vector3(400, 800, 0), SoldierType::Ship);
 
 		EnemyController::GetMain()->SpawnEnemy(Vector3(1664, 424, 0), SoldierType::Ship);
-		EnemyController::GetMain()->SpawnEnemy(Vector3(1664, 574, 0), SoldierType::Ship);
+		EnemyController::GetMain()->SpawnEnemy(Vector3(1664, 674, 0), SoldierType::Ship);
 	}
 
 	// ================================================================
@@ -423,7 +427,7 @@ void PlayerControllerTutorial::CreateObjects()
 		Actor* pTextBox = ACTOR.CreateEmpty(TagType::UI);
 		auto pTextBoxComponent = pTextBox->AddComponent<TextBox>();
 		pTextBox->transform->SetParent(pTextBoxPanel->transform);
-		pTextBox->transform->Position = Vector3(-120, -36.5, 0);
+		pTextBox->transform->Position = Vector3(-110, -36.5, 0);
 
 		Actor* pOperator = ACTOR.Create(TagType::Operator);
 		pOperator->AddComponent<OperatorUnit>();

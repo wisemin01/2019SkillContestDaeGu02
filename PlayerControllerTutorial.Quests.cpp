@@ -40,6 +40,8 @@ void PlayerControllerTutorial::Say_Tutorial_Text02()
 
 void PlayerControllerTutorial::Say_Tutorial_Text03(bool flag)
 {
+	m_pMissionPanelText->SetContext(L"현재 미션이 없습니다.");
+
 	if (flag == true) 
 	{
 		Base->Say(L"잘 하셨어요!");

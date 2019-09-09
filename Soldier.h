@@ -13,6 +13,7 @@ class Soldier :
 private:
 	float m_fSpeed = 100.0f;
 	float m_fAttackSpeed = 0.7f;
+	float m_fAttackBulletSpeed = 120.0f;
 	float m_fMoveLimitRange = 100.0f;
 	
 	int m_iAttackDamage = 10;
@@ -22,6 +23,7 @@ private:
 	bool m_bIsDetectedOnFrame = false;
 
 	Vector3 m_vEndPosition = Vector3::Zero;
+	Vector3 m_vShotPos = Vector3::Zero;
 
 	FSM<Soldier>* m_pFSM = nullptr;
 
@@ -46,6 +48,9 @@ public:
 	virtual void OnDestroy() override;
 	virtual void OnCollision(Collider* other) override;
 
+	void Set(float speed, float attackSpeed, float bulletSpeed, float moveLimitRange, int attackDamage,
+		Vector3 shotPos);
+
 	void OnHpZero(EmptyEventArg e);
 
 	void OnMoveCommand(Vector3 v);
@@ -54,10 +59,10 @@ public:
 	void OnStopCommand(EmptyEventArg e);
 
 	void OnRadarDetected(Collider* other);
+	void CreateRadar(float width, float height);
 
 private:
 
 	void CreateSelectEffect();
-	void CreateRadar(float width, float height);
 };
 

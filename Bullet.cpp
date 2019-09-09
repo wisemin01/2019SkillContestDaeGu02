@@ -2,10 +2,11 @@
 #include "Bullet.h"
 
 #include "HPModule.h"
+#include "Camera.h"
 
 void Bullet::Initialize()
 {
-	renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("test-bullet")));
+	renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("bullet")->Get(0)));
 	renderer->Change(UnitStateType::Idle);
 
 	AddComponent<Collider>();
@@ -13,6 +14,7 @@ void Bullet::Initialize()
 	collider->IsTrigger = true;
 
 	AddComponent<Rigidbody>();
+	rigidbody->Friction = 0.92f;
 }
 
 void Bullet::Update()
@@ -40,6 +42,7 @@ void Bullet::OnCollision(Collider* other)
 		if (pHP)
 		{
 			pHP->Minus(m_iDamage);
+			Camera::MainCamera()->Shake(0.2f, 5.0f);
 		}
 	}
 }

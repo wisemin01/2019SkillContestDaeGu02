@@ -16,18 +16,28 @@ void Camera::Initialize()
 
 void Camera::Update()
 {
-	if (m_bShakeOn == true)
+	if (m_listShakeInfos.empty() == false)
 	{
-		transform->Translate(Vector3(
-			Random::Instance().Get(-m_fShakePower, m_fShakePower),
-			Random::Instance().Get(-m_fShakePower, m_fShakePower),
-			0));
-
-		if (m_pShakeTimer->IsEnd == true)
+		for (auto iter = m_listShakeInfos.begin(); iter != m_listShakeInfos.end();)
 		{
-			m_bShakeOn = false;
+			if (iter->timer->IsEnd == true)
+			{
+				Timer::Destroy(iter->timer);
+
+				iter = m_listShakeInfos.erase(iter);
+			}
+			else
+			{
+				transform->Translate(
+					Vector3(
+						Random::Instance().Get(-iter->power, iter->power),
+						Random::Instance().Get(-iter->power, iter->power), 0)
+				);
+				iter++;
+			}
 		}
 	}
+
 
 	RENDER.SetTransformForDevice(D3DTS_VIEW, &Matrix::View2D(transform->Position, transform->Scale, 0));
 }
@@ -47,15 +57,9 @@ void Camera::Set(int width, int height)
 	RENDER.SetTransformForDevice(D3DTS_PROJECTION, &Matrix::OrthoLH(width, -height, 0, 1));
 }
 
-void Camera::Shake(float time)
+void Camera::Shake(float time, float power)
 {
-	m_pShakeTimer->Reset(time);
-	m_bShakeOn = true;
-}
-
-void Camera::SetShakePower(float power)
-{
-	m_fShakePower = power;
+	m_listShakeInfos.push_back(ShakeInfo(Timer::Create(time), power));
 }
 
 void Camera::SetMain()

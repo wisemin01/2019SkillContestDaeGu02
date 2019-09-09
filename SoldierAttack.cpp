@@ -4,6 +4,7 @@
 #include "FSM.h"
 #include "Soldier.h"
 #include "Bullet.h"
+#include "GuidedBullet.h"
 #include "PlayerController.h"
 
 SoldierAttack::SoldierAttack()
@@ -27,21 +28,24 @@ void SoldierAttack::Stay()
 	if (Base->m_pTarget == nullptr || Base->m_bIsDetectedOnFrame == false)
 	{
 		ChangeState(UnitStateType::Idle);
+		return;
 	}
 
 	if (m_pAttackTimer->IsEnd == true)
 	{
+		bool flip = Base->transform->Scale.x < 0;
+
 		Vector3 vTargetPos = Base->m_pTarget->transform->Position;
-		Vector3 vThis = Base->transform->Position;
+		Vector3 vThis = Base->transform->Position + (flip ? Vector3::XFlip(Base->m_vShotPos) : Base->m_vShotPos);
 
 		Vector3 vDir = vTargetPos - vThis;
 
 		vDir.Normalize();
 
 		Actor* pBullet = ACTOR.Create(TagType::Effect, 4);
-		pBullet->transform->Position = Base->transform->Position;
-		pBullet->AddComponent<Bullet>()->Set(vDir, 40, TagType::Enemy, Base->m_iAttackDamage);
-
+		pBullet->transform->Position = vThis;
+		pBullet->AddComponent<Bullet>()->Set(vDir, Base->m_fAttackBulletSpeed, TagType::Enemy, Base->m_iAttackDamage);
+		
 		m_pAttackTimer->Reset(Base->m_fAttackSpeed);
 	}
 }

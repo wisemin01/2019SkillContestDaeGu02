@@ -30,5 +30,7 @@ private:
 	void CreateStage1UI();
 	void InputHelp();
 	void TimeUpdate();
+
+	void CreateObjects();
 };
 

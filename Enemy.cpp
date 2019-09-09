@@ -25,14 +25,6 @@ void Enemy::Initialize()
 	rigidbody->PhysicalTreatment = true;
 	rigidbody->Friction = 0.5f;
 
-	collider->SetRange(100, 100);
-
-	renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("Test-E")->Get(1)));
-	renderer->AddAnimation(UnitStateType::Move, new Animation(Sprite::Find("Test-E")->Get(1)));
-	renderer->AddAnimation(UnitStateType::Attack, new Animation(Sprite::Find("Test-E")->Get(1)));
-
-	renderer->Change(UnitStateType::Idle);
-
 	m_pFSM = AddComponent<FSM<Enemy>>();
 	m_pFSM->SetOwner(this);
 
@@ -42,8 +34,8 @@ void Enemy::Initialize()
 
 	m_pFSM->ChangeState(UnitStateType::Idle);
 
-	CreateMoveRadar(800, 800);
-	CreateAttackRadar(650, 650);
+	CreateMoveRadar(1000, 1000);
+	CreateAttackRadar(750, 750);
 }
 
 void Enemy::Update()
@@ -65,8 +57,7 @@ void Enemy::Release()
 
 void Enemy::OnDestroy()
 {
-	Camera::MainCamera()->SetShakePower(17.0f);
-	Camera::MainCamera()->Shake(0.3f);
+	Camera::MainCamera()->Shake(0.3f, 17.0f);
 
 	Destroy(m_pAttackRadar);
 	Destroy(m_pMoveRadar);
@@ -116,6 +107,16 @@ void Enemy::OnRadarDetected_Attack(Collider* other)
 void Enemy::OnHpZero(EmptyEventArg e)
 {
 	Destroy(this->Base);
+}
+
+void Enemy::Set(float speed, float attackSpeed, float bulletSpeed, float moveLimitRange, int attackDamage, Vector3 shotPos)
+{
+	m_fSpeed = speed;
+	m_fAttackSpeed = attackSpeed;
+	m_fAttackBulletSpeed = bulletSpeed;
+	m_fMoveLimitRange = moveLimitRange;
+	m_iAttackDamage = attackDamage;
+	m_vShotPos = shotPos;
 }
 
 void Enemy::CreateMoveRadar(float width, float height)

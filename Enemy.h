@@ -15,6 +15,7 @@ private:
 	float	m_fSpeed = 100.0f;
 	float	m_fMoveLimitRange = 100.0f;
 	float	m_fAttackSpeed = 0.7f;
+	float	m_fAttackBulletSpeed = 120.0f;
 
 	int		m_iAttackDamage = 10;
 	int		m_iState = UnitStateType::None;
@@ -22,6 +23,8 @@ private:
 	bool	m_bIsSelect = false;
 	bool	m_bIsDetectedOnFrame_Move = false;
 	bool	m_bIsDetectedOnFrame_Attack = false;
+
+	Vector3 m_vShotPos = Vector3::Zero;
 
 	Actor*	m_pAttackRadar = nullptr;
 	Actor*	m_pMoveRadar = nullptr;
@@ -42,6 +45,8 @@ public:
 
 	void OnHpZero(EmptyEventArg e);
 
+	void Set(float speed, float attackSpeed, float bulletSpeed, float moveLimitRange, int attackDamage,
+		Vector3 shotPos);
 private:
 
 	void CreateMoveRadar(float width, float height);

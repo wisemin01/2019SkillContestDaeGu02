@@ -195,12 +195,6 @@
     <Filter Include="02. INGAME\02. Components\PlayerContoller\States">
       <UniqueIdentifier>{e2580546-1764-46d4-94cf-c6bc5fac477d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. INGAME\02. Components\PlayerContoller\States\01. Tutorial">
-      <UniqueIdentifier>{a23c48a8-6706-4a6e-ab86-fce03879f908}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. INGAME\02. Components\PlayerContoller\States\02. Stage1">
-      <UniqueIdentifier>{93cb1094-31a4-4e20-80fe-1ba9dff53a22}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. INGAME\02. Components\PlayerContoller\States\03. Stage2">
       <UniqueIdentifier>{7f12b489-be64-4320-85ca-eb47a6f29c58}</UniqueIdentifier>
     </Filter>
@@ -242,6 +236,15 @@
     </Filter>
     <Filter Include="02. INGAME\02. Components\Trigger">
       <UniqueIdentifier>{8d4024bc-ef05-418c-b9a4-2c60a858c546}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\PlayerContoller\States\02. Stage1-2">
+      <UniqueIdentifier>{93cb1094-31a4-4e20-80fe-1ba9dff53a22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\GuidedBullet">
+      <UniqueIdentifier>{0710b4aa-908d-4ec7-9b9d-1fbc158657b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. INGAME\02. Components\PlayerContoller\States\01. Tutorial %28Stage1-1%29">
+      <UniqueIdentifier>{a23c48a8-6706-4a6e-ab86-fce03879f908}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -441,10 +444,10 @@
       <Filter>02. INGAME\02. Components\TextBox\States\02. Typing</Filter>
     </ClCompile>
     <ClCompile Include="PlayerControllerTutorial.cpp">
-      <Filter>02. INGAME\02. Components\PlayerContoller\States\01. Tutorial</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller\States\01. Tutorial %28Stage1-1%29</Filter>
     </ClCompile>
     <ClCompile Include="PlayerControllerStage1.cpp">
-      <Filter>02. INGAME\02. Components\PlayerContoller\States\02. Stage1</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller\States\02. Stage1-2</Filter>
     </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>02. INGAME\02. Components\Button</Filter>
@@ -489,10 +492,13 @@
       <Filter>02. INGAME\02. Components\HPModule</Filter>
     </ClCompile>
     <ClCompile Include="PlayerControllerTutorial.Quests.cpp">
-      <Filter>02. INGAME\02. Components\PlayerContoller\States\01. Tutorial</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller\States\01. Tutorial %28Stage1-1%29</Filter>
     </ClCompile>
     <ClCompile Include="Trigger.cpp">
       <Filter>02. INGAME\02. Components\Trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="GuidedBullet.cpp">
+      <Filter>02. INGAME\02. Components\GuidedBullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -665,10 +671,10 @@
       <Filter>02. INGAME\03. Types</Filter>
     </ClInclude>
     <ClInclude Include="PlayerControllerTutorial.h">
-      <Filter>02. INGAME\02. Components\PlayerContoller\States\01. Tutorial</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller\States\01. Tutorial %28Stage1-1%29</Filter>
     </ClInclude>
     <ClInclude Include="PlayerControllerStage1.h">
-      <Filter>02. INGAME\02. Components\PlayerContoller\States\02. Stage1</Filter>
+      <Filter>02. INGAME\02. Components\PlayerContoller\States\02. Stage1-2</Filter>
     </ClInclude>
     <ClInclude Include="Fade.h">
       <Filter>02. INGAME\02. Components\Fade</Filter>
@@ -717,6 +723,9 @@
     </ClInclude>
     <ClInclude Include="Trigger.h">
       <Filter>02. INGAME\02. Components\Trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="GuidedBullet.h">
+      <Filter>02. INGAME\02. Components\GuidedBullet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -8,14 +8,19 @@ Sprite::~Sprite()
 
 void Sprite::Load(const std::string& path, int count)
 {
-	Log(path);
+	std::cout << path;
 
-	D3DXCreateTextureFromFileExA(g_pDevice, path.c_str(),
+	if (S_OK != D3DXCreateTextureFromFileExA(g_pDevice, path.c_str(),
 		D3DX_DEFAULT_NONPOW2, D3DX_DEFAULT_NONPOW2,
-		0, 0, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, 
-		D3DX_DEFAULT, D3DX_DEFAULT, 
+		0, 0, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED,
+		D3DX_DEFAULT, D3DX_DEFAULT,
 		D3DCOLOR_XRGB(10, 10, 10), &m_tInfo,
-		NULL, &m_pTexture);
+		NULL, &m_pTexture))
+	{
+		std::cout << " Texture loading failed";
+	}
+
+	std::cout << std::endl;
 }
 
 Sprite* Sprite::Get(int count)

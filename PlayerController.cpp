@@ -5,6 +5,7 @@
 #include "Soldier.h"
 #include "SelectRange.h"
 #include "FSM.h"
+#include "HPModule.h"
 
 #include "PlayerControllerTutorial.h"
 #include "PlayerControllerStage1.h"
@@ -20,8 +21,6 @@ void PlayerController::Initialize()
 
 	rigidbody->Friction = 0.9f;
 	
-	SetCameraRange(2000, 1125);
-
 	if (g_pMainPlayerController == nullptr)
 		g_pMainPlayerController = this;
 
@@ -96,6 +95,15 @@ Soldier* PlayerController::SpawnSoldier(Vector3 position, int soldierType)
 		Actor* pShip = ACTOR.Create(TagType::Player, 3);
 
 		Soldier* pSoldier = pShip->AddComponent<Soldier>();
+
+		pSoldier->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("stage1-player-ship")));
+		pSoldier->renderer->AddAnimation(UnitStateType::Move, new Animation(Sprite::Find("stage1-player-ship")));
+		pSoldier->renderer->AddAnimation(UnitStateType::Attack, new Animation(Sprite::Find("stage1-player-ship")));
+
+		pSoldier->Set(100.0f, 0.1f, 120.0f, 100.0f, 15, Vector3(161, -52, 0));
+		pSoldier->collider->SetRange(254, 186);
+		pSoldier->CreateRadar(800, 800);
+		pSoldier->GetComponent<HPModule>()->Set(110);
 
 		pSoldier->transform->Position = position;
 

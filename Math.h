@@ -97,6 +97,9 @@ struct Vector3
 	static Vector3 TransformNormal(CONST Vector3& v, CONST Matrix& m);
 	static Vector3 TransformCoord(CONST Vector3& v, CONST Matrix& m);
 	static Vector3 Abs(CONST Vector3& v);
+	static Vector3 XFlip(CONST Vector3& v);
+	static Vector3 YFlip(CONST Vector3& v);
+	static Vector3 ZFlip(CONST Vector3& v);
 };
 
 struct Vector4

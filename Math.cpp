@@ -93,6 +93,21 @@ Vector3 Vector3::Abs(const Vector3& v)
 	return ret;
 }
 
+Vector3 Vector3::XFlip(const Vector3& v)
+{
+	return Vector3(-v.x, v.y, v.z);
+}
+
+Vector3 Vector3::YFlip(const Vector3& v)
+{
+	return Vector3(v.x, -v.y, v.z);
+}
+
+Vector3 Vector3::ZFlip(const Vector3& v)
+{
+	return Vector3(v.x, v.y, -v.z);
+}
+
 Matrix Matrix::Translation(float x, float y, float z)
 {
 	Matrix m;
