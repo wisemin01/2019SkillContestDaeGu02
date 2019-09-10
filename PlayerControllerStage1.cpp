@@ -8,6 +8,7 @@
 #include "Fade.h"
 #include "TextRenderer.h"
 #include "EnemyController.h"
+#include "Trigger.h"
 
 void PlayerControllerStage1::Enter()
 {
@@ -19,6 +20,8 @@ void PlayerControllerStage1::Enter()
 
 	CreateObjects();
 	CreateStage1UI();
+
+	Base->transform->Position = Vector3(1000, 1500, 0);
 }
 
 void PlayerControllerStage1::Stay()
@@ -32,11 +35,21 @@ void PlayerControllerStage1::Stay()
 
 	InputHelp();
 	TimeUpdate();
+	StatusUpdate();
 }
 
 void PlayerControllerStage1::Exit()
 {
 	SoundSource::Find("FTu1L")->Stop();
+}
+
+void PlayerControllerStage1::OnStageEndTrigger(Collider* other)
+{
+	if (other->Tag == TagType::Player)
+	{
+		m_pBlackFadePanel->GetComponent<Fade<Color>>()->Set(Color(1, 1, 1, 1), FadeTarget::Renderer_Alpha, 0.45f);
+		m_bIsStageEnd = true;
+	}
 }
 
 void PlayerControllerStage1::Start()
@@ -46,12 +59,12 @@ void PlayerControllerStage1::Start()
 	SoundSource::Find("FTu1L")->Play(true);
 
 	Base->Say(L"사령관님!");
-	Base->Say(L"현재 서면 길거리가 적에게\n점령당할 위기입니다.");
-	Base->Say(L"5분 내로 모든 적들을 물리치고\n상황이 심각한 부산역으로\n가야합니다.");
+	Base->Say(L"현재 해운대가 인공지능 로봇들에게\n점령당할 위기입니다.");
+	Base->Say(L"5분 내로 모든 적들을 물리치고\n상황이 심각한 서면 길거리로\n향해야 합니다.");
 	Base->Say(L"서둘러주세요.");
 
 	SoundSource::Load("button-3", L"Sound/button-3.wav")->DuplicatePlay();
-	m_pMissionPanelText->SetContext(L"빠르게 모든 적들을 물리치고\n부산역으로 향하자.");
+	m_pMissionPanelText->SetContext(L"빠르게 모든 적들을 물리치고\n서면 길거리로 향하자.");
 
 	m_pBlackFadePanel->renderer->CurrentAnime->AnimeColor = Color::White;
 	m_pBlackFadePanel->AddComponent<Fade<Color>>()->Set(Color(0, 0, 0, 0), FadeTarget::Renderer_Alpha, -0.35f);
@@ -108,9 +121,71 @@ void PlayerControllerStage1::TimeUpdate()
 		m_bIsWarningTimeEnd = true;
 		Base->Say(L"시간이 다 되었어요.....\n임무 실패입니다.....");
 		m_pTimePanelText->SetColor(Color::Black);
+		m_bIsQuestFail = true;
+		m_bIsStageEnd = true;
 	}
 
 	m_pTimePanelText->SetContext(SecondsToTimeStringW(anyTime));
+}
+
+void PlayerControllerStage1::StatusUpdate()
+{
+	if (m_bIsWarning == false && PlayerController::GetPlayerUnitCount() == 5)
+	{
+		Base->Say(L"아군 로봇의 피해가 큽니다.\n조심하세요!");
+
+		m_bIsWarning = true;
+	}
+
+	if (m_bIsCheering == false && EnemyController::GetEnemyUnitCount() == 10)
+	{
+		Base->Say(L"이제 남은 적은 10기 정도에요.\n힘내세요!");
+
+		m_bIsCheering = true;
+	}
+
+	if (m_bIsQuestFail == false && PlayerController::GetPlayerUnitCount() == 0)
+	{
+		m_pMissionPanelText->SetContext(L"현재 미션이 없습니다.");
+
+		Base->Say(L"아군의 로봇이 모두 파괴되었어요...");
+		Base->Say(L"잠시 뒤 다시 작전이 시작될테니\n조금만 더 열심히 해주세요.");
+
+		m_bIsQuestFail = true;
+	}
+
+	if (m_bIsQuestFail == true && GetOperator()->HasWork() == false)
+	{
+		m_pBlackFadePanel->GetComponent<Fade<Color>>()->Set(Color(1, 1, 1, 1), FadeTarget::Renderer_Alpha, 0.45f);
+		m_bIsStageEnd = true;
+	}
+
+	if (m_bIsQuestFail == false && m_bIsQuestClear == false && EnemyController::GetEnemyUnitCount() == 0)
+	{
+		Base->Say(L"해운대의 바닷가를\n지켜내셨어요!");
+		Base->Say(L"이제 위쪽 방향인 서면 길거리를\n지켜내러 가시면 됩니다.");
+
+		SoundSource::Load("button-3", L"Sound/button-3.wav")->DuplicatePlay();
+		m_pMissionPanelText->SetContext(L"서면 길거리로 가자.\n(맵의 위쪽과 연결되어 있습니다.)");
+
+		Actor* pTrigger = Actor::Create(TagType::None);
+
+		auto trigger = pTrigger->AddComponent<Trigger>();
+		trigger->collider->SetRange(2000, 200);
+		trigger->OnTriggerStay += CreateListener(Collider*, OnStageEndTrigger);
+
+		pTrigger->transform->Position = Vector3(1000, 0, 0);
+
+		m_bIsQuestClear = true;
+	}
+
+	if (m_bIsStageEnd == true && m_pBlackFadePanel->renderer->CurrentAnime->GetAlpha() >= 1.0f)
+	{
+		if (m_bIsQuestClear == true)
+			SCENE.Change("STAGE2");
+		else if (m_bIsQuestFail == true)
+			SCENE.Change("STAGE1");
+	}
 }
 
 void PlayerControllerStage1::CreateObjects()
@@ -123,7 +198,7 @@ void PlayerControllerStage1::CreateObjects()
 		Actor* pBackground = ACTOR.Create(TagType::Background, 0);
 		pBackground->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("stage1-background-2")->Get(0)));
 		pBackground->renderer->Change(UnitStateType::Idle);
-		pBackground->transform->Position = Vector3(1000, 562.5, 0);
+		pBackground->transform->Position = Vector3(1000, 1000, 0);
 	}
 
 	// ================================================================
@@ -132,10 +207,53 @@ void PlayerControllerStage1::CreateObjects()
 
 	{
 		Actor* pParasol = ACTOR.Create(TagType::Obstacle, 3);
-		pParasol->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("pasasol")));
-		pParasol->renderer->Change(UnitStateType::Idle);
-		pParasol->transform->Position = Vector3(800, 300, 0);
-		pParasol->AddComponent<Collider>()->SetRange(100, 100);
+		pParasol->renderer->SetSingleAnimation(Sprite::Find("pasasol"));
+		pParasol->transform->Position = Vector3(240, 800, 0);
+		
+		Actor* pBench = ACTOR.Create(TagType::Obstacle, 3);
+		pBench->renderer->SetSingleAnimation(Sprite::Find("bench"));
+		pBench->transform->Position = Vector3(1000, 240, 0);
+
+		Actor* pRock = ACTOR.Create(TagType::Obstacle, 4);
+		pRock->renderer->SetSingleAnimation(Sprite::Find("stage1-1-rock"));
+		pRock->transform->Position = Vector3(1000, 1765.5, 0);
+
+		Actor* pTube1 = Actor::Create(TagType::Obstacle, 3);
+		pTube1->renderer->SetSingleAnimation(Sprite::Find("tube")->Get(0));
+		pTube1->transform->Position = Vector3(267, 1473, 0);
+		pTube1->AddComponent<Collider>()->SetRange(200, 170);
+
+		Actor* pTube2 = Actor::Create(TagType::Obstacle, 3);
+		pTube2->renderer->SetSingleAnimation(Sprite::Find("tube")->Get(1));
+		pTube2->transform->Position = Vector3(1530, 942, 0);
+		pTube2->AddComponent<Collider>()->SetRange(200, 170);
+
+		Actor* pTube3 = Actor::Create(TagType::Obstacle, 3);
+		pTube3->renderer->SetSingleAnimation(Sprite::Find("tube")->Get(2));
+		pTube3->transform->Position = Vector3(1800, 1224, 0);
+		pTube3->AddComponent<Collider>()->SetRange(200, 170);
+	}
+
+	// ================================================================
+	// COLLISION OBJECTS
+	// ================================================================
+
+	{
+		Actor* pBenchCol1 = Actor::Create(TagType::Obstacle, 4);
+		pBenchCol1->transform->Position = Vector3(510, 285, 0);
+		pBenchCol1->AddComponent<Collider>()->SetRange(340, 118);
+
+		Actor* pBenchCol2 = Actor::Create(TagType::Obstacle, 4);
+		pBenchCol2->transform->Position = Vector3(1470, 290, 0);
+		pBenchCol2->AddComponent<Collider>()->SetRange(340, 118);
+
+		Actor* pRockCol1 = Actor::Create(TagType::Obstacle, 0);
+		pRockCol1->transform->Position = Vector3(120, 1880, 0);
+		pRockCol1->AddComponent<Collider>()->SetRange(150, 150);
+
+		Actor* pRockCol2 = Actor::Create(TagType::Obstacle, 0);
+		pRockCol2->transform->Position = Vector3(1880, 1880, 0);
+		pRockCol2->AddComponent<Collider>()->SetRange(150, 150);
 	}
 
 	// ================================================================
@@ -143,12 +261,34 @@ void PlayerControllerStage1::CreateObjects()
 	// ================================================================
 
 	{
-		PlayerController::GetMain()->SpawnSoldier(Vector3(300, 300, 0), SoldierType::Ship);
-		PlayerController::GetMain()->SpawnSoldier(Vector3(450, 300, 0), SoldierType::Ship);
-		PlayerController::GetMain()->SpawnSoldier(Vector3(600, 300, 0), SoldierType::Ship);
+		for (int i = 0; i < 5; i++)
+		{
+			for (int j = 0; j < 2; j++)
+			{
+				PlayerController::GetMain()->SpawnSoldier(Vector3(492 + 69 * i, 1447 + 102 * j, 0), SoldierType::Long);
+			}
+		}
 
-		EnemyController::GetMain()->SpawnEnemy(Vector3(1664, 424, 0), SoldierType::Ship);
-		EnemyController::GetMain()->SpawnEnemy(Vector3(1664, 574, 0), SoldierType::Ship);
+		for (int i = 0; i < 5; i++)
+		{
+			for (int j = 0; j < 2; j++)
+			{
+				EnemyController::GetMain()->SpawnEnemy(Vector3(141 + 100 * i, 600 + 146 * j, 0), SoldierType::Short);
+			}
+		}
+
+		for (int i = 0; i < 5; i++)
+		{
+			for (int j = 0; j < 2; j++)
+			{
+				EnemyController::GetMain()->SpawnEnemy(Vector3(841 + 100 * i, 600 + 146 * j, 0), SoldierType::Short);
+			}
+		}
+
+		for (int i = 0; i < 10; i++)
+		{
+			EnemyController::GetMain()->SpawnEnemy(Vector3(150 + 125 * i, 400, 0), SoldierType::Long);
+		}
 	}
 
 	// ================================================================
@@ -191,4 +331,14 @@ void PlayerControllerStage1::CreateObjects()
 		pMission->transform->Position = Vector3(168, 250, 0);
 		pMission->SetParent(pCanvas);
 	}
+}
+
+OperatorUnit* PlayerControllerStage1::GetOperator()
+{
+	Actor* pBase = ACTOR.FindActor(TagType::Operator);
+
+	if (pBase == nullptr)
+		return nullptr;
+
+	return pBase->GetComponent<OperatorUnit>();
 }

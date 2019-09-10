@@ -14,13 +14,11 @@
 
 void Soldier::Initialize()
 {
+	Super::Initialize();
+
 	PlayerController::AddUnit();
 
-	AddComponent<Rigidbody>();
-	AddComponent<Collider>();
-
 	HPModule* pHP = AddComponent<HPModule>();
-	pHP->Set(100);
 	pHP->OnUnitDeath += CreateListener(EmptyEventArg, OnHpZero);
 
 	rigidbody->PhysicalTreatment = true;
@@ -50,6 +48,8 @@ void Soldier::Initialize()
 
 void Soldier::Update()
 {
+	Super::Update();
+
 	if (m_bIsSelect == true)
 	{
 		Lerp(m_pSelectEffect->transform->Scale, Vector3::One, Time::Delta());
@@ -66,12 +66,19 @@ void Soldier::LateUpdate()
 
 void Soldier::Release()
 {
+	Super::Release();
 	PlayerController::RemoveUnit();
 }
 
 void Soldier::OnDestroy()
 {
-	Camera::MainCamera()->Shake(0.3f, 17.0f);
+	Super::OnDestroy();
+
+	SoundSource::Load("destroyed(3)", L"Sound/destroyed(3).wav")->DuplicatePlay();
+
+	Actor* pExplosion = Actor::Create(TagType::Effect, 4);
+	pExplosion->renderer->SetSingleAnimation(Sprite::Find("explosion-effect-2"), 0.06f, true);
+	pExplosion->transform->Position = transform->Position;
 
 	Destroy(m_pSelectEffect);
 	Destroy(m_pRadar);
@@ -80,21 +87,6 @@ void Soldier::OnDestroy()
 	PlayerController::GetMain()->OnSelect.Remove(OnSelect);
 	PlayerController::GetMain()->OnDeselect.Remove(OnDeselect);
 	PlayerController::GetMain()->OnStop.Remove(OnStop);
-}
-
-void Soldier::OnCollision(Collider* other)
-{
-
-}
-
-void Soldier::Set(float speed, float attackSpeed, float bulletSpeed, float moveLimitRange, int attackDamage, Vector3 shotPos)
-{
-	m_fSpeed = speed;
-	m_fAttackSpeed = attackSpeed;
-	m_fAttackBulletSpeed = bulletSpeed;
-	m_fMoveLimitRange = moveLimitRange;
-	m_iAttackDamage = attackDamage;
-	m_vShotPos = shotPos;
 }
 
 void Soldier::OnHpZero(EmptyEventArg e)
@@ -135,7 +127,22 @@ void Soldier::OnRadarDetected(Collider* other)
 	if (other->Tag == TagType::Enemy) 
 	{
 		m_bIsDetectedOnFrame = true;
-		m_pTarget = other->Base;
+
+		if (m_pTarget == nullptr) 
+		{
+			m_pTarget = other->Base;
+			return;
+		}
+
+		Vector3 ot1 = other->transform->Position;
+		Vector3 ot2 = m_pTarget->transform->Position;
+		Vector3 v = transform->Position;
+		
+		float ot1_length = Vector3::Length(v - ot1);
+		float ot2_length = Vector3::Length(v - ot2);
+
+		if (ot1_length < ot2_length)
+			m_pTarget = other->Base;
 	}
 }
 

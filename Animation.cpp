@@ -1,10 +1,11 @@
 #include "DXUT.h"
 #include "Animation.h"
 
-Animation::Animation(Sprite* sprite, int start, int end, float delay)
+
+Animation::Animation(Sprite* sprite, FrameRange range, float delay)
 {
 	m_pSprite = sprite;
-	m_tFrame.Set(start, end, delay);
+	m_tFrame.Set(range.start, range.end, delay);
 }
 
 Animation::Animation(Sprite* sprite, float delay)
@@ -23,6 +24,15 @@ bool Animation::Update()
 {
 	if (m_tFrame.Update())
 	{
+		if (m_tFrame.CurrentFrame == m_tFrame.StartFrame)
+		{
+			m_bIsEndOnThisFrame = true;
+		}
+		else
+		{
+			m_bIsEndOnThisFrame = false;
+		}
+
 		return true;
 	}
 

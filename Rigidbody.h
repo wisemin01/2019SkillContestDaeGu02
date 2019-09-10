@@ -12,6 +12,7 @@ private:
 	float m_fFriction = 0.8f;
 
 	bool m_bIsPhysicalTreatment = false;
+	bool m_bIsUseGravity = false;
 
 public:
 	// Component을(를) 통해 상속됨
@@ -41,5 +42,10 @@ public:
 	PropertyGS(GetVelocity, SetVelocity) Vector3 Velocity;
 	PropertyGS(GetFriction, SetFriction) float Friction;
 	PropertyGS(GetPhysicalTreatment, SetPhysicalTreatment) bool PhysicalTreatment;
+
+private:
+	inline static Vector3 g_vGravity = Vector3(0, 9.8, 0);
+public:
+	static Vector3 GetGravity() { return g_vGravity; }
 };
 

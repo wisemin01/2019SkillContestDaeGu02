@@ -41,7 +41,16 @@ public:
 	enum : int
 	{
 		None = -1,
-		Ship = 1
+		Ship = 1,
+		Short = 2,
+		Long = 3,
+		Builder = 4,
+		DefenceTower = 5,
+		Tank = 6,
+		AirCraft = 7,
+		Dron = 8,
+		LargeAirCraft = 9,
+		LargeSoldier = 10
 	};
 
 };

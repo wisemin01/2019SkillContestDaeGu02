@@ -54,11 +54,6 @@ void PlayerControllerTutorial::Stay()
 		return;
 	}
 
-	if (Input::GetKeyDown(KeyCode::Space))
-	{
-		Camera::MainCamera()->Shake(0.5f, 30.0f);
-	}
-
 	OnAttackCommand();
 	CheckDisplayQuest();
 	CheckEndTutorial();

@@ -13,13 +13,11 @@
 
 void Enemy::Initialize()
 {
+	Super::Initialize();
+
 	EnemyController::AddUnit();
 
-	AddComponent<Rigidbody>();
-	AddComponent<Collider>();
-
 	HPModule* pHP = AddComponent<HPModule>();
-	pHP->Set(100);
 	pHP->OnUnitDeath += CreateListener(EmptyEventArg, OnHpZero);
 
 	rigidbody->PhysicalTreatment = true;
@@ -33,13 +31,12 @@ void Enemy::Initialize()
 	m_pFSM->AddState(UnitStateType::Attack, new EnemyAttack());
 
 	m_pFSM->ChangeState(UnitStateType::Idle);
-
-	CreateMoveRadar(1000, 1000);
-	CreateAttackRadar(750, 750);
 }
 
 void Enemy::Update()
 {
+	Super::Update();
+
 	if (m_pTarget && m_pTarget->IsLive == false)
 		m_pTarget = nullptr;
 }
@@ -52,12 +49,20 @@ void Enemy::LateUpdate()
 
 void Enemy::Release()
 {
+	Super::Release();
+
 	EnemyController::RemoveUnit();
 }
 
 void Enemy::OnDestroy()
 {
-	Camera::MainCamera()->Shake(0.3f, 17.0f);
+	Super::OnDestroy();
+
+	SoundSource::Load("destroyed(3)", L"Sound/destroyed(3).wav")->DuplicatePlay();
+
+	Actor* pExplosion = Actor::Create(TagType::Effect, 4);
+	pExplosion->renderer->SetSingleAnimation(Sprite::Find("explosion-effect-2"), 0.06f, true);
+	pExplosion->transform->Position = transform->Position;
 
 	Destroy(m_pAttackRadar);
 	Destroy(m_pMoveRadar);
@@ -107,16 +112,6 @@ void Enemy::OnRadarDetected_Attack(Collider* other)
 void Enemy::OnHpZero(EmptyEventArg e)
 {
 	Destroy(this->Base);
-}
-
-void Enemy::Set(float speed, float attackSpeed, float bulletSpeed, float moveLimitRange, int attackDamage, Vector3 shotPos)
-{
-	m_fSpeed = speed;
-	m_fAttackSpeed = attackSpeed;
-	m_fAttackBulletSpeed = bulletSpeed;
-	m_fMoveLimitRange = moveLimitRange;
-	m_iAttackDamage = attackDamage;
-	m_vShotPos = shotPos;
 }
 
 void Enemy::CreateMoveRadar(float width, float height)

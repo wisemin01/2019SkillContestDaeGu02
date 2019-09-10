@@ -426,6 +426,16 @@ std::wstring SecondsToTimeStringW(float seconds)
 	return to_wstring(m) + (s < 10 ? L":0" : L":") + to_wstring(s);
 }
 
+constexpr float ToDegree(float radian)
+{
+	return ( ( radian ) * ( 180.0f / PI() ) );
+}
+
+constexpr float ToRadian(float degree)
+{
+	return ( ( degree ) * ( PI() / 180.0f ) );
+}
+
 ostream& operator << (ostream& os, const Vector4& value)
 {
 	os << value.x << ", " << value.y << ", " << value.z << ", " << value.w;

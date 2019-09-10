@@ -45,6 +45,7 @@ public:
 	RECT GetRect() { return m_rcRange; }
 
 	void SetRange(float width, float height);
+	void SetRange(float left, float top, float right, float bottom);
 
 #endif
 

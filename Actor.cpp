@@ -106,13 +106,9 @@ void Actor::SetIsActive(bool value)
 	m_bActive = value;
 
 	if (m_bActive == true)
-	{
 		OnEnable();
-	}
 	else
-	{
 		OnDisable();
-	}
 }
 
 void Actor::SetParent(Actor* value)
@@ -123,4 +119,19 @@ void Actor::SetParent(Actor* value)
 void Actor::AddChlid(Actor* value)
 {
 	transform->AddChlid(value->transform);
+}
+
+Actor* Actor::Create(Tag tag, bool isVisible, bool isActive, int layer)
+{
+	return ACTOR.Create(tag, isVisible, isActive, layer);
+}
+
+Actor* Actor::Create(Tag tag, int layer)
+{
+	return ACTOR.Create(tag, layer);
+}
+
+Actor* Actor::Find(Tag tag)
+{
+	return ACTOR.FindActor(tag);
 }

@@ -10,6 +10,8 @@
 #include "PlayerControllerTutorial.h"
 #include "PlayerControllerStage1.h"
 
+#include "BulletAttack.h"
+
 void PlayerController::Initialize()
 {
 	SoundSource::Load("midnight-ride-01a", L"Sound/midnight-ride-01a.wav");
@@ -30,37 +32,27 @@ void PlayerController::Initialize()
 
 	m_pFSM = AddComponent<FSM<PlayerController>>();
 	m_pFSM->SetOwner(this);
-
-	if (g_bIsEndListenTutorial == true)
-	{
-		m_pFSM->AddState(PlayerControllerType::Stage1, new PlayerControllerStage1());
-
-		m_pFSM->ChangeState(PlayerControllerType::Stage1);
-	}
-	else
-	{
-		m_pFSM->AddState(PlayerControllerType::Tutorial, new PlayerControllerTutorial());
-
-		m_pFSM->ChangeState(PlayerControllerType::Tutorial);
-	}
 }
 
 void PlayerController::Update()
 {
-	if (Input::GetKeyPress(KeyCode::P))
+#if DEBUG
+	static bool bDebug6xSpeedMode = false;
+
+	if (Input::GetKeyDown(KeyCode::P))
 	{
-		// 3¹è ¸ðµå
-		Time::SetTimeScale(3.0f);
+		bDebug6xSpeedMode = !bDebug6xSpeedMode;
+
+		Time::SetTimeScale(bDebug6xSpeedMode ? 4.0f : 1.0f);
 	}
-	else
-	{
-		Time::SetTimeScale(1.0f);
-	}
+#endif
 
 	if (Input::GetKeyPress(KeyCode::Space))
 	{
 		Actor* pFirstSoldier = ACTOR.FindActor(TagType::Player);
-		transform->Position = Vector3::Lerp(transform->Position, pFirstSoldier->transform->Position, 0.15f);
+
+		if (pFirstSoldier)
+			transform->Position = Vector3::Lerp(transform->Position, pFirstSoldier->transform->Position, 0.15f);
 	}
 
 	CameraMoveInput();
@@ -86,29 +78,6 @@ void PlayerController::OnCollision(Collider* other)
 void PlayerController::SetCameraRange(float width, float height)
 {
 	SetRect(&m_rcCameraRange, 0, 0, width, height);
-}
-
-Soldier* PlayerController::SpawnSoldier(Vector3 position, int soldierType)
-{
-	if (soldierType == SoldierType::Ship)
-	{
-		Actor* pShip = ACTOR.Create(TagType::Player, 3);
-
-		Soldier* pSoldier = pShip->AddComponent<Soldier>();
-
-		pSoldier->renderer->AddAnimation(UnitStateType::Idle, new Animation(Sprite::Find("stage1-player-ship")));
-		pSoldier->renderer->AddAnimation(UnitStateType::Move, new Animation(Sprite::Find("stage1-player-ship")));
-		pSoldier->renderer->AddAnimation(UnitStateType::Attack, new Animation(Sprite::Find("stage1-player-ship")));
-
-		pSoldier->Set(100.0f, 0.1f, 120.0f, 100.0f, 15, Vector3(161, -52, 0));
-		pSoldier->collider->SetRange(254, 186);
-		pSoldier->CreateRadar(800, 800);
-		pSoldier->GetComponent<HPModule>()->Set(110);
-
-		pSoldier->transform->Position = position;
-
-		return pSoldier;
-	}
 }
 
 void PlayerController::CameraMoveInput()

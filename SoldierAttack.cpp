@@ -6,6 +6,7 @@
 #include "Bullet.h"
 #include "GuidedBullet.h"
 #include "PlayerController.h"
+#include "UnitAttackBase.h"
 
 SoldierAttack::SoldierAttack()
 {
@@ -42,10 +43,8 @@ void SoldierAttack::Stay()
 
 		vDir.Normalize();
 
-		Actor* pBullet = ACTOR.Create(TagType::Effect, 4);
-		pBullet->transform->Position = vThis;
-		pBullet->AddComponent<Bullet>()->Set(vDir, Base->m_fAttackBulletSpeed, TagType::Enemy, Base->m_iAttackDamage);
-		
+		Base->m_pAttacker->Attack(Base->m_iAttackDamage, Base->m_fAttackBulletSpeed, vThis, vDir, TagType::Enemy);
+
 		m_pAttackTimer->Reset(Base->m_fAttackSpeed);
 	}
 }

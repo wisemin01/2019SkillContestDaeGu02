@@ -4,6 +4,7 @@
 #include "FSM.h"
 #include "Enemy.h"
 #include "Bullet.h"
+#include "UnitAttackBase.h"
 
 EnemyAttack::EnemyAttack()
 {
@@ -40,10 +41,7 @@ void EnemyAttack::Stay()
 
 		vDir.Normalize();
 
-
-		Actor* pBullet = ACTOR.Create(TagType::Effect, 4);
-		pBullet->transform->Position = vThis;
-		pBullet->AddComponent<Bullet>()->Set(vDir, Base->m_fAttackBulletSpeed, TagType::Player, Base->m_iAttackDamage);
+		Base->m_pAttacker->Attack(Base->m_iAttackDamage, Base->m_fAttackBulletSpeed, vThis, vDir, TagType::Player);
 
 		m_pAttackTimer->Reset(Base->m_fAttackSpeed);
 	}

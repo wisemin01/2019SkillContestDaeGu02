@@ -25,6 +25,7 @@ protected:
 
 	int m_RenderType = RenderType::ObjectSpace;
 	int m_iRenderLayer = 0;
+
 public:
 	Renderer() {}
 	virtual ~Renderer() {}
@@ -39,8 +40,13 @@ public:
 	void AddAnimation(int key, Animation* animation);
 	void Change(int key);
 
+	// change current animation's sprite
+	void ChangeSprite(Sprite* sprite);
+
 	int GetLayer() const { return m_iRenderLayer; }
 	void SetLayer(int value) { m_iRenderLayer = value; }
+
+	void SetSingleAnimation(Sprite* sprite, float delay = 0.0f, bool isDestroyOnFrameEnd = false);
 
 public:
 

@@ -73,4 +73,6 @@ public:
 
 	static void AddUnit() { g_iPlayerUnitCount++; }
 	static void RemoveUnit() { g_iPlayerUnitCount--; }
+
+	static bool IsClearTutorial() { return g_bIsEndListenTutorial; }
 };

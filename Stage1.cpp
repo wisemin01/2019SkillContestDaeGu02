@@ -1,12 +1,11 @@
 #include "DXUT.h"
 #include "Stage1.h"
 #include "Actor.h"
+
 #include "PlayerController.h"
-#include "EnemyController.h"
-#include "Wobble.h"
-#include "OperatorUnit.h"
-#include "Soldier.h"
-#include "TextBox.h"
+#include "FSM.h"
+#include "PlayerControllerTutorial.h"
+#include "PlayerControllerStage1.h"
 
 
 void Stage1::Initialize()
@@ -16,8 +15,6 @@ void Stage1::Initialize()
 	// ================================================================
 
 	{
-		Sprite::Load("bullet", "Effect/Bullet/bullet%d.png", 2);
-
 		Sprite::Load("stage1-background-1", "Stage1/(%d).png", 2);
 		Sprite::Load("stage1-background-2", "Stage1/background.png");
 		Sprite::Load("bench", "Stage1/bench.png");
@@ -36,12 +33,6 @@ void Stage1::Initialize()
 		Sprite::Load("stage1-player-ship", "Stage1/ship/player.png");
 
 		Sprite::Load("Caust", "Caust/(%d).png", 32);
-
-		Sprite::Load("MainUI", "UI/Main.png");
-		Sprite::Load("TextBox", "UI/TextBox.png");
-		Sprite::Load("Mission", "UI/Mission.png");
-		Sprite::Load("Operator", "UI/Operator(%d).png", 3);
-		Sprite::Load("select-effect", "UI/Select/%d.png", 10);
 	}
 
 	// ================================================================
@@ -51,6 +42,17 @@ void Stage1::Initialize()
 	{
 		Actor* pPlayerController = ACTOR.Create(TagType::Controller, false);
 		pPlayerController->AddComponent<PlayerController>();
+
+		if (PlayerController::IsClearTutorial() == true)
+		{
+			pPlayerController->GetComponent<FSM<PlayerController>>()->AddState(PlayerControllerType::Stage1, new PlayerControllerStage1());
+			pPlayerController->GetComponent<FSM<PlayerController>>()->ChangeState(PlayerControllerType::Stage1);
+		}
+		else
+		{
+			pPlayerController->GetComponent<FSM<PlayerController>>()->AddState(PlayerControllerType::Tutorial, new PlayerControllerTutorial());
+			pPlayerController->GetComponent<FSM<PlayerController>>()->ChangeState(PlayerControllerType::Tutorial);
+		}
 	}
 
 }

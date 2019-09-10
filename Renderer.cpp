@@ -3,6 +3,7 @@
 
 #include "Actor.h"
 #include "Animation.h"
+#include "SingleAnimation.h"
 
 void Renderer::Initialize()
 {
@@ -62,6 +63,30 @@ void Renderer::Change(int key)
 	}
 
 	throw exception("FSM<OWNER>::ChangeState(int key) - Invalid key value.");
+}
+
+void Renderer::ChangeSprite(Sprite* sprite)
+{
+	if (CurrentAnime)
+	{
+		CurrentAnime->AnimeSprite = sprite;
+	}
+}
+
+void Renderer::SetSingleAnimation(Sprite* sprite, float delay, bool isDestroyOnFrameEnd)
+{
+	if (auto find = m_mapAnimations.find(0); find != m_mapAnimations.end()) 
+	{
+		throw std::exception("Animation is already assigned to position 0.");
+	}
+
+	AddAnimation(0, new Animation(sprite, delay));
+	Change(0);
+
+	if (isDestroyOnFrameEnd)
+	{
+		AddComponent<SingleAnimation>();
+	}
 }
 
 void Renderer::SetRenderType(int renderType)

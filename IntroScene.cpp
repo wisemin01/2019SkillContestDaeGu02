@@ -14,6 +14,20 @@ void IntroScene::Initialize()
 	// ================================================================
 
 	{
+		Sprite::Load("mouse-click", "UI/MouseClick/(%d).png", 6);
+
+		Sprite::Load("bullet", "Effect/Bullet/bullet%d.png", 2);
+		Sprite::Load("MainUI", "UI/Main.png");
+		Sprite::Load("TextBox", "UI/TextBox.png");
+		Sprite::Load("Mission", "UI/Mission.png");
+		Sprite::Load("Operator", "UI/Operator(%d).png", 3);
+		Sprite::Load("select-effect", "UI/Select/%d.png", 10);
+
+		Sprite::Load("attack-effect", "Effect/AttackEffect/(%d).png", 5);
+		Sprite::Load("explosion-effect-1", "Effect/Explosion1/(%d).png", 7);
+		Sprite::Load("explosion-effect-2", "Effect/Explosion2/(%d).png", 7);
+		Sprite::Load("water-splash", "Effect/WaterSplash/(%d).png", 6);
+
 		Sprite::Load("menu-background", "Mainmenu/background.png");
 		Sprite::Load("busan-station", "Mainmenu/busan-station.png");
 		Sprite::Load("coin-background", "Mainmenu/coin-background.png");

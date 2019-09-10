@@ -30,6 +30,10 @@ void Collider::SetRange(float width, float height)
 {
 	::SetRect(&m_rcRange, -Half(width), -Half(height), Half(width), Half(height));
 }
+void Collider::SetRange(float left, float top, float right, float bottom)
+{
+	::SetRect(&m_rcRange, left, top, right, bottom);
+}
 #endif
 
 void Collider::Initialize()

@@ -72,14 +72,14 @@ struct Vector3
 		return Vector3(x * other.x, y * other.y, z * other.z);
 	}
 
-	Vector3 operator*(float s)
+	Vector3 operator*(float s) const
 	{
 		return Vector3(x * s, y * s, z * s);
 	}
 
 	Vector3 operator*(const Vector3& other) const
 	{
-		return  Vector3(x * other.x, y * other.y, z * other.z);
+		return Vector3(x * other.x, y * other.y, z * other.z);
 	}
 
 	static const Vector3 Zero;
@@ -214,6 +214,16 @@ public:
 		m_MersenneTwister64 = std::mt19937_64(m_RandomDevice());
 	}
 
+	static int Range(int min, int max)
+	{
+		return Instance().Get(min, max);
+	}
+
+	static float Range(float min, float max)
+	{
+		return Instance().Get(min, max);
+	}
+
 	static Random& Instance()
 	{
 		static Random random;
@@ -247,3 +257,7 @@ bool			IntersectRect(const RECT* rc1, const RECT* rc2);
 std::string		SecondsToTimeStringA(float seconds);
 std::wstring	SecondsToTimeStringW(float seconds);
 
+constexpr float ToDegree(float radian);
+constexpr float ToRadian(float degree);
+
+constexpr float PI() { return (float)3.141592654f; }

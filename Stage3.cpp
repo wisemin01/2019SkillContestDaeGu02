@@ -2,10 +2,21 @@
 #include "Stage3.h"
 #include "TextRenderer.h"
 
+#include "FSM.h"
+#include "PlayerController.h"
+#include "PlayerControllerStage2.h"
+
 void Stage3::Initialize()
 {
-	Actor* pActor = ACTOR.CreateEmpty(TagType::None);
-	pActor->AddComponent<Transform>();
-	pActor->AddComponent<TextRenderer>()->Set("메이플스토리 Bold", 50, L"Stage3 는 아직 미구현 스테이지입니다.");
-	pActor->transform->Position = Vector3(100, 100, 0);
+	// ================================================================
+	// PLAYER CONTROLLER
+	// ================================================================
+
+	{
+		Actor* pPlayerController = ACTOR.Create(TagType::Controller, false);
+		pPlayerController->AddComponent<PlayerController>();
+
+		pPlayerController->GetComponent<FSM<PlayerController>>()->AddState(PlayerControllerType::Stage3, new PlayerControllerStage2());
+		pPlayerController->GetComponent<FSM<PlayerController>>()->ChangeState(PlayerControllerType::Stage3);
+	}
 }

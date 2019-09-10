@@ -15,11 +15,13 @@ void EnemyMove::Stay()
 		|| Base->m_bIsDetectedOnFrame_Move == false)
 	{
 		ChangeState(UnitStateType::Idle);
+		return;
 	}
 
 	if (Base->m_bIsDetectedOnFrame_Attack == true)
 	{
 		ChangeState(UnitStateType::Attack);
+		return;
 	}
 
 	Vector3 TargetPos = Base->m_pTarget->transform->Position;

@@ -95,6 +95,12 @@ public:
 
 	void SetParent(Actor* value);
 	void AddChlid(Actor* value);
+
+public:
+
+	static Actor* Create(Tag tag = -1, bool isVisible = true, bool isActive = true, int layer = 0);
+	static Actor* Create(Tag tag, int layer);
+	static Actor* Find(Tag tag);
 };
 
 #include "Actor.hpp"

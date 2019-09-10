@@ -11,6 +11,11 @@ void Rigidbody::Update()
 	m_vVelocity += m_vForce;
 	m_vForce = Vector3::Zero;
 
+	if (m_bIsUseGravity)
+	{
+		m_vVelocity += GetGravity() * Time::Delta();
+	}
+
 	transform->Position += m_vVelocity;
 
 	m_vVelocity *= m_fFriction;
