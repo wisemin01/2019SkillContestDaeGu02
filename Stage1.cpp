@@ -43,7 +43,7 @@ void Stage1::Initialize()
 		Actor* pPlayerController = ACTOR.Create(TagType::Controller, false);
 		pPlayerController->AddComponent<PlayerController>();
 
-		if (PlayerController::IsClearTutorial() == true)
+		if (PlayerController::IsClearTutorial())
 		{
 			pPlayerController->GetComponent<FSM<PlayerController>>()->AddState(PlayerControllerType::Stage1, new PlayerControllerStage1());
 			pPlayerController->GetComponent<FSM<PlayerController>>()->ChangeState(PlayerControllerType::Stage1);

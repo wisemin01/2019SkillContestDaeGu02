@@ -64,7 +64,7 @@ public:
 
 private:
 	inline static PlayerController* g_pMainPlayerController = nullptr;
-	inline static bool g_bIsEndListenTutorial = true;
+	inline static bool g_bIsEndListenTutorial = false;
 	inline static int g_iPlayerUnitCount = 0;
 
 public:

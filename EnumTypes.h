@@ -120,6 +120,6 @@ public:
 		Height = 720,
 	};
 
-	static const bool Windowed = true;
+	static const bool Windowed = false;
 	inline static Vector3 Center = Vector3(Width / 2, Height / 2, 0);
 };
